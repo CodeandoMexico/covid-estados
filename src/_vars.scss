@@ -1,0 +1,42 @@
+$m-font-family: sans-serif;
+$m-font-size: 16px;
+$m-font-weight: 400;
+$m-letter-spacing: normal;
+$m-line-height: 1.5em;
+
+$m-code-family: monospace;
+
+$m-em-family: serif;
+
+$m-h-family: sans-serif;
+$m-h-size: 23px;
+$m-h-height: 1em;
+$m-h-spacing: normal;
+$m-h-weight: 600;
+$m-h-style: normal;
+$m-h-transform: none;
+
+$m-colors: (
+  "background": #fff,
+  "font": #5176FF,
+  "primary": #5176FF
+);
+
+$m-queries: (
+  "phone": (
+    "since": 320px,
+    "until": 767px,
+  ),
+  "tablet": (
+    "since": 768px,
+    "until": 1024px,
+  ),
+  "laptop": (
+    "since": 1025px,
+    "until": 1599.99px,
+  ),
+  "desktop": (
+    "since": 1600px,
+    "until": 99999px,
+  )
+);
