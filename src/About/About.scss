@@ -1,0 +1,36 @@
+@import '../_vars.scss';
+
+.about-container {
+  margin: auto;
+  max-width: 1200px;
+  padding-left: $m-space;
+  padding-right: $m-space;
+
+  h4 {
+    color: map-get($m-colors, "primary");
+    text-transform: uppercase;
+  }
+  .row {
+    padding-top: $m-space;
+    padding-bottom: $m-space;
+    display: flex;
+    justify-content: space-between;
+  }
+  .col {
+    flex: 0 0 45%;
+  }
+}
+
+.sponsors {
+  background: map-get($m-colors, "bg-primary");
+  padding-top: $m-space;
+  padding-bottom: $m-space;
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  img {
+    height: 70px;
+  }
+}

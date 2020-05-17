@@ -1,0 +1,12 @@
+@import '../_vars.scss';
+
+.nav-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $m-space;
+
+  .nav {
+    display: flex;
+  }
+}

@@ -1,25 +1,26 @@
-$m-font-family: sans-serif;
-$m-font-size: 16px;
+$m-font-family: 'Poppins', 'Roboto', sans-serif;
+$m-font-size: 17px;
 $m-font-weight: 400;
 $m-letter-spacing: normal;
-$m-line-height: 1.5em;
+$m-line-height: 1.4em;
 
 $m-code-family: monospace;
 
 $m-em-family: serif;
 
-$m-h-family: sans-serif;
-$m-h-size: 23px;
+$m-h-family: 'Poppins', 'Roboto', sans-serif;
+$m-h-size: 17px;
 $m-h-height: 1em;
 $m-h-spacing: normal;
-$m-h-weight: 600;
+$m-h-weight: 500;
 $m-h-style: normal;
-$m-h-transform: none;
+$m-h-transform: normal;
 
 $m-colors: (
   "background": #fff,
-  "font": #5176FF,
-  "primary": #5176FF
+  "font": #3C4874,
+  "primary": #5176FF,
+  "bg-primary": #DFE6FF
 );
 
 $m-queries: (
@@ -40,3 +41,5 @@ $m-queries: (
     "until": 99999px,
   )
 );
+
+$m-space: 50px;
