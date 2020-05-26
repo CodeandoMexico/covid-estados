@@ -1,14 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Switch, Redirect, Route, useParams } from 'react-router-dom';
+import { BrowserRouter, Switch, Redirect, Route } from 'react-router-dom';
 import Home from './Home';
+import Detail from './Detail';
 import About from './About';
 import NavMain from './NavMain';
 import './App.scss';
-
-function State() {
-  let { name } = useParams();
-  return <h2>{ name }</h2>;
-}
 
 function Err404() {
   return <h2>Pagina no encontrada</h2>;
@@ -21,8 +17,8 @@ function App() {
       <Switch>
         <Redirect from="/home" to="/" />
         <Route exact path="/" component={ Home } />
-        <Route path="/estado/:name" component={ State } />
-        <Route path="/about" component={ About } />
+        <Route path="/estado/:name" component={ Detail } />
+        <Route path="/sobre-el-proyecto" component={ About } />
         <Route component={ Err404 } />
       </Switch>
     </BrowserRouter>
