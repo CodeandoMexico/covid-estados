@@ -1,3 +1,10 @@
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
 $m-font-family: 'Poppins', 'Roboto', sans-serif;
 $m-font-size: 17px;
 $m-font-weight: 400;
