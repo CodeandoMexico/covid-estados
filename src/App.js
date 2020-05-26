@@ -3,12 +3,9 @@ import { BrowserRouter, Switch, Redirect, Route } from 'react-router-dom';
 import Home from './Home';
 import Detail from './Detail';
 import About from './About';
+import Err404 from './Err404';
 import NavMain from './NavMain';
 import './App.scss';
-
-function Err404() {
-  return <h2>Pagina no encontrada</h2>;
-}
 
 function App() {
   return (
