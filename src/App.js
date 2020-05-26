@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Redirect, Route, useParams } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
-import NavBar from './NavBar';
+import NavMain from './NavMain';
 import './App.scss';
 
 function State() {
@@ -17,7 +17,7 @@ function Err404() {
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavMain />
       <Switch>
         <Redirect from="/home" to="/" />
         <Route exact path="/" component={ Home } />

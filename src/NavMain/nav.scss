@@ -1,0 +1,13 @@
+@import '../_vars.scss';
+.nav-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $m-space * .2;
+}
+
+@media only screen and (min-width: map-deep-get($m-queries, "tablet", "since")) {
+  .nav-main {
+    padding: $m-space;
+  }
+}
