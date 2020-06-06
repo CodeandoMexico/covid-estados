@@ -1,14 +1,14 @@
 @import '../_vars.scss';
 
-.home {
-  margin: auto;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-
-  .cover {
-    flex: 1;
-  }
+// .home {
+//   margin: auto;
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: space-between;
+//
+//   .cover {
+//     flex: 1;
+//   }
   .msg {
     padding: $m-space $m-space 0;
     text-align: center;
@@ -24,14 +24,14 @@
       line-height: 1.3em;
     }
   }
-}
-
+// }
+//
 
 .states {
   text-align: center;
   width: 320px;
   margin: auto;
-
+  position: relative;
   .states-action {
     border-radius: 3px;
     margin: $m-space auto 0;
@@ -48,7 +48,7 @@
     height: 27vh;
     overflow: scroll;
     position: absolute;
-    bottom: 0;
+    top: 90px;
 
 
     .states-option {
