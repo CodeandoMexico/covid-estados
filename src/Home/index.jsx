@@ -1,12 +1,20 @@
 import React from 'react';
-import home from './assets/home.svg';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import home from './assets/home.svg';
 import './Home.scss';
 
 
-function Home() {
-  const states=['Aguascalientes','Baja California','Baja California Sur','Campeche','Chiapas','Chihuahua','Coahuila de Zaragoza','Colima','Ciudad de México','Durango','Guanajuato','Guerrero','Hidalgo','Jalisco','Mexico','Michoacan de Ocampo','Morelos','Nayarit','Nuevo Leon','Oaxaca','Puebla','Queretaro de Arteaga','Quintana Roo','San Luis Potosi','Sinaloa','Sonora','Tabasco','Tamaulipas','Tlaxcala','Veracruz-Llave','Yucatan','Zacatecas'];
+function Home({ estados }) {
+  // console.clear();
+  console.log(JSON.stringify(estados, null, 2))
 
+  let estadosToRender;
+  if(estados.length>1) {
+    estadosToRender = estados.map((e,i) => (
+      <Link className="states-option" to={"/estado/"+e.fields.estado} key={i}> { e.fields.estado }</Link>
+    ))
+  }
   return (
     <React.Fragment>
       <div className="home">
@@ -18,11 +26,7 @@ function Home() {
             <h2>Una guía de información oficial, líneas de atención y medidas por estado frente al COVID</h2>
               <nav className="states">
                 <button className="states-action" type="button">[SELECCIONA]</button>
-                <div className="states-options">
-                  {states.map((name, index) => (
-                    <Link className="states-option" to={"/estado/"+name} key={index}> {name}</Link>
-                  ))}
-                </div>
+                <div className="states-options">{estadosToRender}</div>
               </nav>
           </div>
       </div>
@@ -30,4 +34,10 @@ function Home() {
   );
 }
 
-export default Home;
+const mapStateToProps = state => ({
+  estados: state.estados
+})
+
+export default connect(
+  mapStateToProps
+)(Home);
