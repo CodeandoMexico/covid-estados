@@ -14,21 +14,19 @@ ___
 - npm
 
 ### Instalación
-`npm install`
-
+1. `npm install`
 
 ### Para correr el entorno de desarrollo
-`npm start`
+1. `npm start`
 
-[http://localhost:3000](http://localhost:3000)
-
-### Para crear el proyecto de distribucion
-`npm run build`
-
+### Para actualizar Github Pages
+1. `npm run build`
+2. `npm run deploy`
 
 ### Créditos
 
 * [flkt](https://github.com/flkt-crnpio)
+* [wotanwotan](https://github.com/wotanwotan)
 
 `{}` con ❤️ por la comunidad de [Codeando México](http://www.codeandomexico.org).
 
