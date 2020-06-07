@@ -2,6 +2,7 @@
   "name": "covid-estados",
   "description": "Una guía de información oficial, líneas de atención y medidas por estado frente al COVID",
   "version": "0.0.0",
+  "homepage": "https://github.com/wotanwotan/covid-estados",
   "dependencies": {
     "mol-normalize": "^1.0.2",
     "node-sass": "^4.14.1",
@@ -14,7 +15,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,5 +42,11 @@
     "type": "git",
     "url": "https://github.com/CodeandoMexico/covid-estados"
   },
-  "author": "flkt.crnpio@gmail.com"
+  "authors": [
+    "flkt.crnpio@gmail.com",
+    "odinosaur@gmail.com"
+  ],
+  "devDependencies": {
+    "gh-pages": "^3.0.0"
+  }
 }
