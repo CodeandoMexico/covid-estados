@@ -23,12 +23,31 @@ import {
   Container,
   Counter,
   Box,
+  LinkTo,
 } from '../Components';
 
 function Detail({ estados }) {
   const { id } = useParams();
   const item = estados[id] || false;
-  console.log('> ITEM', item);
+  // console.log('> ITEM', item);
+
+  let violencia_genero_en_linea = []
+  let violencia_genero_telefono = []
+  let telefono = []
+  if (item && item.violencia_genero_en_linea !== 'no') {
+    // item.violencia_genero_en_linea debe ser:
+    // key value,key2 value2..
+    violencia_genero_en_linea = item.violencia_genero_en_linea.split(',').map(v => v.split(' '))
+  }
+  if (item && item.violencia_genero_telefono !== 'no') {
+    violencia_genero_telefono = item.violencia_genero_telefono.split(',')
+  }
+
+  if (item) {
+    telefono = item.telefono.split(',')
+  }
+  console.log('> ', telefono)
+
   return (
     item ?
     <React.Fragment>
@@ -60,9 +79,7 @@ function Detail({ estados }) {
             </Container>
             <Container>
               <Container>
-                52 456 7890 <br />
-                52 456 7890 <br />
-                52 456 7890 <br />
+                {telefono.map((v, k) => <span key={k}>{v}</span>)}
               </Container>
               <Container alignItems={'end'}>
                 <img src={telephone} alt="Quédate en casa"/>
@@ -110,9 +127,13 @@ function Detail({ estados }) {
                 <h3>Líneas de atención a violencia de género</h3>
               </Container>
               <Container>
-                <Container>
-                Teléfonos: {item.telefono_violencia_genero !== 'no' && item.telefono_violencia_genero} <br />
-                En línea: {item.violencia_genero_en_linea !== 'no' && item.violencia_genero_en_linea}
+                <Container direction={'column'}>
+                  {violencia_genero_telefono.length > 0 && <Container>
+                    Teléfonos: <div>{violencia_genero_telefono.map((v, k) => (<div key={k}>{v}</div>))}</div>
+                  </Container>}
+                  {violencia_genero_en_linea.length > 0 && <Container>
+                    En línea: <div>{violencia_genero_en_linea.map((v, k) => (<LinkTo key={k} v={v} />))}</div>
+                  </Container>}
                 </Container>
                 <img src={telephone2} />
               </Container>

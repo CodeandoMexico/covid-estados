@@ -31,3 +31,12 @@ export const Container = ({
     {children}
   </div>
 )
+
+export const LinkTo = ({ v }) => {
+  let link = '';
+  if (v[0] == 'whatsapp') link = `https://api.whatsapp.com/send?phone=${v[1]}&text=Hola%20BC`
+  else if (v[0] == 'correo') link = `mailto:${v[1]}`
+  else link = v[1];
+  return (
+  <div><a href={link} target="_blank">{v[0].toUpperCase()}</a></div>
+)}
