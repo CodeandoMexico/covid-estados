@@ -13,7 +13,7 @@ export const Counter = ({ title, number }) => (
   </div>
 )
 export const Icon = ({ image, text, link = '#' }) => (
-  <a className="icon" href={link} target='_blank'>
+  <a className="icon" href={link} target='_blank' rel="noopener noreferrer">
     <div>
       <img src={image} alt={text} />
     </div>
@@ -34,9 +34,9 @@ export const Container = ({
 
 export const LinkTo = ({ v }) => {
   let link = '';
-  if (v[0] == 'whatsapp') link = `https://api.whatsapp.com/send?phone=${v[1]}&text=Hola%20BC`
-  else if (v[0] == 'correo') link = `mailto:${v[1]}`
+  if (v[0] === 'whatsapp') link = `https://api.whatsapp.com/send?phone=${v[1]}&text=Hola%20BC`
+  else if (v[0] === 'correo') link = `mailto:${v[1]}`
   else link = v[1];
   return (
-  <div><a href={link} target="_blank">{v[0].toUpperCase()}</a></div>
+  <div><a href={link} target="_blank" rel="noopener noreferrer">{v[0].toUpperCase()}</a></div>
 )}

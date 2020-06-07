@@ -34,19 +34,20 @@ function Detail({ estados }) {
   let violencia_genero_en_linea = []
   let violencia_genero_telefono = []
   let telefono = []
-  if (item && item.violencia_genero_en_linea !== 'no') {
-    // item.violencia_genero_en_linea debe ser:
-    // key value,key2 value2..
-    violencia_genero_en_linea = item.violencia_genero_en_linea.split(',').map(v => v.split(' '))
-  }
-  if (item && item.violencia_genero_telefono !== 'no') {
-    violencia_genero_telefono = item.violencia_genero_telefono.split(',')
-  }
-
   if (item) {
-    telefono = item.telefono.split(',')
+    if (item.violencia_genero_en_linea && item.violencia_genero_en_linea !== 'no') {
+      // item.violencia_genero_en_linea debe ser:
+      // key value,key2 value2..
+      violencia_genero_en_linea = item.violencia_genero_en_linea.split(',').map(v => v.split(' '))
+    }
+    if (item.violencia_genero_telefono && item.violencia_genero_telefono !== 'no') {
+      violencia_genero_telefono = item.violencia_genero_telefono.split(',')
+    }
+
+    if (item.telefono) {
+      telefono = item.telefono.split(',')
+    }
   }
-  console.log('> ', telefono)
 
   return (
     item ?
@@ -135,7 +136,7 @@ function Detail({ estados }) {
                     En línea: <div>{violencia_genero_en_linea.map((v, k) => (<LinkTo key={k} v={v} />))}</div>
                   </Container>}
                 </Container>
-                <img src={telephone2} />
+                <img src={telephone2} alt="Teléfono"/>
               </Container>
             </Box>
             <Container>
@@ -146,7 +147,7 @@ function Detail({ estados }) {
           </Container>
         </Container>
         <Container alignItems={'center'}>
-          <h2>Para más información: </h2><a href={item.web} className="button" target="_blank">SITIO WEB OFICIAL</a>
+          <h2>Para más información: </h2><a href={item.web} className="button" target="_blank" rel="noopener noreferrer">SITIO WEB OFICIAL</a>
         </Container>
       </Container>
 

@@ -5,16 +5,13 @@ import home from './assets/home.svg';
 import './Home.scss';
 
 import {
-  Icon,
   Container,
-  Counter,
-  Box,
 } from '../Components';
 
 function Home({ estados }) {
    const [dropdown, setDropdown] = useState(false);
   // console.clear();
-  console.log(JSON.stringify(estados, null, 2))
+  // console.log(JSON.stringify(estados, null, 2))
 
   let estadosToRender;
   if(estados.length>1) {
