@@ -5,6 +5,12 @@
   justify-content: space-between;
   padding: $m-space * .2;
 }
+.nav-link {
+  font-size: 13px;
+  line-height: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
 
 @media only screen and (min-width: map-deep-get($m-queries, "tablet", "since")) {
   .nav-main {
