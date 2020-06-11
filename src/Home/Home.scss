@@ -1,44 +1,47 @@
 @import '../_vars.scss';
 
 .home {
-  margin: auto;
+  box-sizing: border-box;
+  margin: 0 auto;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-
-  .cover {
-    flex: 1;
-  }
-  .msg {
-    padding: $m-space $m-space 0;
-    text-align: center;
-    h1 {
-      color: map-get($m-colors, "primary");
-      font-weight: 900;
-      margin-bottom: 0;
-    }
-    h2 {
-      color: map-get($m-colors, "primary");
-      font-size: 22px;
-      font-weight: 400;
-      line-height: 1.3em;
-    }
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.cover {
+  img {
+    max-width: 100%;
   }
 }
-
+.msg {
+  color: map-get($m-colors, "primary");
+  text-align: center;
+  padding: 0 $m-space * .5;
+  h1,
+  p {
+    margin: 0;
+  }
+}
+.mobile-title {
+  display: block;
+  text-align: center;
+}
+.desk-title {
+  display: none;
+}
 
 .states {
   text-align: center;
   width: 320px;
   margin: auto;
-
+  position: relative;
   .states-action {
     border-radius: 3px;
     margin: $m-space auto 0;
     max-width: 320px;
     width: 320px;
   }
-
   .states-options {
     background: #fff;
     border: 1px solid #efefef;
@@ -48,14 +51,31 @@
     height: 27vh;
     overflow: scroll;
     position: absolute;
-    bottom: 0;
-
-
+    top: 90px;
     .states-option {
       background: #fff;
       display: block;
       line-height: 3em;
       text-decoration: none;
     }
+  }
+}
+
+@media only screen and (min-width: map-deep-get($m-queries, "laptop", "since")) {
+  .home {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $m-max-width;
+  }
+  .msg {
+    padding: 0 $m-space;
+    max-width: 470px;
+  }
+  .mobile-title {
+    display: none;
+  }
+  .desk-title {
+    display: block;
   }
 }

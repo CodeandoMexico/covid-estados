@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://api.airtable.com/v0/appelr2zBXKCJPWJS/covidmx?api_key=keymOwmuSwgNcTH7p')
+    fetch('https://api.airtable.com/v0/appelr2zBXKCJPWJS/covidmx?api_key=keymOwmuSwgNcTH7p&sort%5B0%5D%5Bfield%5D=estado')
     .then((resp) => resp.json())
     .then(data => {
       this.props.fetchEstados(data.records);
@@ -35,7 +35,7 @@ class App extends React.Component {
         <Switch>
           <Redirect from="/home" to="/" />
           <Route exact path="/" component={ Home } />
-          <Route path="/estado/:name" component={ Detail } />
+          <Route path="/estado/:id" component={ Detail } />
           <Route path="/sobre-el-proyecto" component={ About } />
           <Route component={ Err404 } />
         </Switch>

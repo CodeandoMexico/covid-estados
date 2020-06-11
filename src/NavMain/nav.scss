@@ -4,10 +4,27 @@
   align-items: center;
   justify-content: space-between;
   padding: $m-space * .2;
+  margin: 0 auto;
+  max-width: $m-max-width;
+}
+.nav-codeando {
+  width: 148.5px;
+}
+.nav-link {
+  font-size: 12.5px;
+  line-height: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 @media only screen and (min-width: map-deep-get($m-queries, "tablet", "since")) {
   .nav-main {
     padding: $m-space;
+  }
+  .nav-codeando {
+    width: 198px;
+  }
+  .nav-link {
+    font-size: 15px;
   }
 }
