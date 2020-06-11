@@ -1,4 +1,6 @@
 import React from 'react';
+import './components.scss';
+
 export const Box = ({ children, direction = 'row' }) => (
   <div className={`box direction-${direction}`}>
     {children}
