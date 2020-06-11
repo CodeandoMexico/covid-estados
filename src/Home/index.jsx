@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import home from './assets/home.svg';
+import home from '../assets/home.svg';
 import './Home.scss';
-
-import {
-  Container,
-} from '../Components';
 
 function Home({ estados }) {
    const [dropdown, setDropdown] = useState(false);
-  // console.clear();
-  // console.log(JSON.stringify(estados, null, 2))
 
   let estadosToRender;
   if(estados.length>1) {
@@ -21,21 +15,20 @@ function Home({ estados }) {
   }
   return (
     <React.Fragment>
-      <Container>
-        <Container alignItems={'center'}>
+      <div className="home">
+        <div className="cover">
+          <h1 className="mobile-title">Directorio<br/>COVID Mx</h1>
           <img src={home} alt="Home COVID CodeandoMexico" />
-        </Container>
-        <Container>
-          <div className="msg">
-            <h1>COVID19</h1>
-            <h2>Una guía de información oficial, líneas de atención y medidas por estado frente al COVID</h2>
-              <nav className="states">
-                <button className="states-action" onClick={() => setDropdown(!dropdown)} type="button">[SELECCIONA]</button>
-                {dropdown && <div className="states-options">{estadosToRender}</div>}
-              </nav>
-          </div>
-        </Container>
-      </Container>
+        </div>
+        <div className="msg">
+          <h1 className="desk-title">Directorio<br/>COVID Mx</h1>
+          <p>Una espacio con información oficial por estado para quién no sabe qué hacer</p>
+          <nav className="states">
+            <button className="states-action" onClick={() => setDropdown(!dropdown)} type="button">[SELECCIONA]</button>
+            {dropdown && <div className="states-options">{estadosToRender}</div>}
+          </nav>
+        </div>
+      </div>
     </React.Fragment>
   );
 }
