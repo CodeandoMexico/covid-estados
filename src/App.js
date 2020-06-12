@@ -5,7 +5,6 @@ import { BrowserRouter, Switch, Redirect, Route } from 'react-router-dom';
 import Home from './Home';
 import Detail from './Detail';
 import About from './About';
-import Err404 from './Err404';
 import NavMain from './NavMain';
 import './App.scss';
 
@@ -21,7 +20,6 @@ class App extends React.Component {
     .then((resp) => resp.json())
     .then(data => {
       this.props.fetchEstados(data.records);
-      // console.log(JSON.stringify(data.records, null, 2));
     })
     .catch(err => {
       console.error(err);
@@ -37,7 +35,7 @@ class App extends React.Component {
           <Route exact path="/" component={ Home } />
           <Route path="/estado/:id" component={ Detail } />
           <Route path="/sobre-el-proyecto" component={ About } />
-          <Route component={ Err404 } />
+          <Route component={ Home } />
         </Switch>
       </BrowserRouter>
     );
