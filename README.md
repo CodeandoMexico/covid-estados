@@ -10,8 +10,8 @@ Los 32 estados de México tienen distintos protocolos y acciones, adicionales a 
 ___
 
 ### Requerimientos
-- node
-- npm
+- node v13.11.0
+- npm 6.13.7
 
 ### Instalación
 1. `npm install`
