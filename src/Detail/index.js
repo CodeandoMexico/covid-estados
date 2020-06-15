@@ -84,7 +84,7 @@ function Detail({ estados }) {
           </Box>
           <Box direction={"column"}>
             <Container>
-              <h4>Lineas locales de atencion</h4>
+              <h4>L&iacute;neas locales de atenci&oacute;n</h4>
             </Container>
             <Container>
               <Container>
@@ -102,7 +102,7 @@ function Detail({ estados }) {
         </Container>
 
         <Container>
-          <Box>medidas oficiales</Box>
+          <Box>Medidas oficiales</Box>
         </Container>
       </Container>
 
