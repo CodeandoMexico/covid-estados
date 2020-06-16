@@ -1,0 +1,27 @@
+$margin-between-telephones: 5px;
+
+ul.decoration {
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.decoration li:first-child {
+  margin-bottom: $margin-between-telephones;
+}
+
+ul.decoration li:last-child {
+  margin-top: $margin-between-telephones;
+}
+
+ul.decoration li:not(:first-child):not(:last-child) {
+  margin-top: $margin-between-telephones;
+  margin-bottom: $margin-between-telephones;
+}
+
+.margin-left {
+    margin-left: auto;
+}
+
+.margin-right {
+    margin-right: auto;
+}
