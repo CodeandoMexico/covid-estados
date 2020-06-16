@@ -1,8 +1,15 @@
-$margin-between-telephones: 5px;
+$margin-between-telephones: 10px;
 
 ul.decoration {
   padding: 0;
   list-style-type: none;
+}
+
+ul.decoration2 {
+  padding: 0;
+  list-style-type: none;
+  margin-left: -60px;
+  margin-top: 25px;
 }
 
 ul.decoration li:first-child {

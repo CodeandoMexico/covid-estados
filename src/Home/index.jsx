@@ -22,7 +22,7 @@ function Home({ estados }) {
         </div>
         <div className="msg">
           <h1 className="desk-title">Directorio<br/>COVID Mx</h1>
-          <p>Una espacio con información oficial por estado para quién no sabe qué hacer</p>
+          <p>Una espacio con información oficial por estado para quien no sabe qué hacer</p>
           <nav className="states">
             <button className="states-action" onClick={() => setDropdown(!dropdown)} type="button">[SELECCIONA]</button>
             {dropdown && <div className="states-options">{estadosToRender}</div>}

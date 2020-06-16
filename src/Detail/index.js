@@ -62,11 +62,11 @@ function Detail({ estados }) {
           alignItems={"center"}
         >
           <h1>{item.estado}</h1>
-          Te interesa información de otro estado
+          ¿Te interesa información de otro estado?
           <button className="states-action" type="button">
             [SELECCIONA]
           </button>
-          Quédate en casa y lavate las manos
+          Quédate en casa y lávate las manos.
         </Container>
 
         <Container direction={"column"}>
@@ -108,14 +108,14 @@ function Detail({ estados }) {
 
       <Container>
         <Container direction={"column"} alignItems={"center"}>
-          <h2>Tienes sintomas</h2>
+          <h2>¿Tienes síntomas?</h2>
           <h4>Hazte la prueba en línea</h4>
           <Container>
             {item.app_android === "no" &&
               item.sms === "no" &&
               item.app_ios === "no" &&
               item.prueba_web === "no" &&
-              "No hay información por el momento"}
+              "No hay información por el momento."}
           </Container>
           <Container>
             {item.prueba_web !== "no" && (
@@ -142,7 +142,7 @@ function Detail({ estados }) {
       <Container direction={"column"} className={"bgBlue"}>
         <Container className={"mobileColumn"}>
           <Container direction={"column"} alignItems={"center"}>
-            <h1>Informacion relevante</h1>
+            <h1>Información relevante</h1>
             <img
               src={cat}
               alt={"Informacion relevante"}
@@ -158,22 +158,32 @@ function Detail({ estados }) {
                 <Container direction={"column"}>
                   {violencia_genero_telefono.length > 0 && (
                     <Container>
-                      Teléfonos:{" "}
-                      <div>
+                      Teléfonos: {" "}
+                      {/* <div>
                         {violencia_genero_telefono.map((v, k) => (
                           <div key={k}>{v}</div>
                         ))}
-                      </div>
+                      </div> */}
+                      <ul className="decoration2">
+                        {violencia_genero_telefono.map((v, k) => (
+                          <div key={k}>{v}</div>
+                        ))}
+                      </ul>
                     </Container>
                   )}
                   {violencia_genero_en_linea.length > 0 && (
                     <Container>
-                      En línea:{" "}
-                      <div>
+                      En línea: {" "}
+                      {/* <div>
                         {violencia_genero_en_linea.map((v, k) => (
                           <LinkTo key={k} v={v} />
                         ))}
-                      </div>
+                      </div> */}
+                      <ul className="decoration2">
+                        {violencia_genero_en_linea.map((v, k) => (
+                          <LinkTo key={k} v={v} />
+                        ))}
+                      </ul>
                     </Container>
                   )}
                 </Container>
@@ -198,14 +208,14 @@ function Detail({ estados }) {
           </Container>
         </Container>
         <Container alignItems={"center"}>
-          <h2>Para más información: </h2>
+          <h4>Para más información: </h4>
           <a
             href={item.web}
             className="button"
             target="_blank"
             rel="noopener noreferrer"
           >
-            SITIO WEB OFICIAL
+            <button>SITIO WEB OFICIAL</button>
           </a>
         </Container>
       </Container>
@@ -215,7 +225,14 @@ function Detail({ estados }) {
           *Este es un esfuerzo voluntario, si encuentras información incorrecta
           o quieres agregar algo, llena este formulario
         </p>
-        <button>Descargar datos</button>
+        <a
+          href="https://airtable.com/shrmp4rtdUkGu8BAn"
+          className="button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button>Descargar datos</button>
+        </a>
       </Container>
     </React.Fragment>
   ) : (
