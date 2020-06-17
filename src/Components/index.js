@@ -44,6 +44,17 @@ export const LinkTo = ({ v }) => {
 )}
 
 export const DetailHeader = ({item}) => {
+  const buttonStyle = {
+    backgroundColor: '#fff',
+    flex: 1,
+    height: 30,
+    minHeight: '42px'
+  }
+  const buttonContainer = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  }
   return (
     <Container
       direction={"column"}
@@ -55,14 +66,13 @@ export const DetailHeader = ({item}) => {
       <div>
         <p>¿Te interesa información de otro estado?</p>
       </div>
-      <div 
+      <div
         className="button-container"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center"
-        }}>
-          <button className="states-action" type="button" style={{backgroundColor: '#fff', flex: 1, height: 30, minHeight: '42px'}}>
+        style={buttonContainer}>
+          <button 
+            className="states-action" 
+            type="button" 
+            style={buttonStyle}>
             <span style={{color: '#5176FF'}}>[SELECCIONA]</span>
           </button>
       </div>
