@@ -20,12 +20,12 @@ import docs from "../assets/docs.svg";
 import whatsapp from "../assets/whatsapp.svg";
 import cat from "../assets/cat.svg";
 
-import { Icon, Container, Counter, Box, LinkTo } from "../Components";
+import { Icon, Container, Counter, Box, LinkTo, Badge } from "../Components";
 
 function Detail({ estados }) {
   const { id } = useParams();
   const item = estados[id] || false;
-  // console.log('> ITEM', item);
+  console.log('> ITEM', item);
 
   let violencia_genero_en_linea = [];
   let violencia_genero_telefono = [];
@@ -101,8 +101,22 @@ function Detail({ estados }) {
           </Box>
         </Container>
 
-        <Container>
-          <Box>Medidas oficiales</Box>
+        <Container className="text-primary no-margin">
+          <Box direction={"column"}>
+            <h3>MEDIDAS OFICIALES</h3>
+            <h5>SEMÁFORO</h5>
+            <p direction={"column"}>
+              Nivel de riesgo: 
+                  <Badge variant="red" direction={"column"}>{item["nivel de riesgo"]}</Badge>
+            </p>
+            <p direction={"column"}>
+              Tendencia:
+                  <Badge variant="red" direction={"column"}>{item.tendencia}</Badge>
+            </p>
+            <p>
+            {item["medidas-01"]}
+              </p>
+          </Box>
         </Container>
       </Container>
 

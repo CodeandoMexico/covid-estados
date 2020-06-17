@@ -98,6 +98,20 @@
   }
 }
 
+.badge {
+  border-radius: 25px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 20px;
+  text-transform: capitalize;
+  &.badge-red {
+    background-color: #E60000;
+  }
+}
+
 @media (max-width: 920px) {
   #codeandocovid > .container {
     flex-direction: column;

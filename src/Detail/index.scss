@@ -1,3 +1,5 @@
+@import '../_vars.scss';
+
 $margin-between-telephones: 10px;
 
 ul.decoration {
@@ -31,4 +33,17 @@ ul.decoration li:not(:first-child):not(:last-child) {
 
 .margin-right {
     margin-right: auto;
+}
+
+.text-primary {
+  color: map-get($m-colors, "primary");
+}
+
+.no-margin {
+  h5 {
+    margin-top: 0px;
+  }
+  p {
+    margin-top: 0px;
+  }
 }

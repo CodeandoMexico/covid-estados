@@ -42,3 +42,7 @@ export const LinkTo = ({ v }) => {
   return (
   <div><a href={link} target="_blank" rel="noopener noreferrer">{v[0].toUpperCase()}</a></div>
 )}
+
+export const Badge = ({ children, variant }) => {
+  return (<sapn className={`badge badge-${variant}`}>{children}</sapn>)
+}
