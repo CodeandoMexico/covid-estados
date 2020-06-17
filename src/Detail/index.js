@@ -20,12 +20,11 @@ import docs from "../assets/docs.svg";
 import whatsapp from "../assets/whatsapp.svg";
 import cat from "../assets/cat.svg";
 
-import { Icon, Container, Counter, Box, LinkTo } from "../Components";
+import { Icon, Container, Counter, Box, LinkTo, DetailHeader } from "../Components";
 
 function Detail({ estados }) {
   const { id } = useParams();
   const item = estados[id] || false;
-  // console.log('> ITEM', item);
 
   let violencia_genero_en_linea = [];
   let violencia_genero_telefono = [];
@@ -56,18 +55,7 @@ function Detail({ estados }) {
   return item ? (
     <React.Fragment>
       <Container>
-        <Container
-          direction={"column"}
-          className={"title"}
-          alignItems={"center"}
-        >
-          <h1>{item.estado}</h1>
-          ¿Te interesa información de otro estado?
-          <button className="states-action" type="button">
-            [SELECCIONA]
-          </button>
-          Quédate en casa y lávate las manos.
-        </Container>
+        <DetailHeader item={item} />
 
         <Container direction={"column"}>
           <Box direction={"column"}>

@@ -42,3 +42,34 @@ export const LinkTo = ({ v }) => {
   return (
   <div><a href={link} target="_blank" rel="noopener noreferrer">{v[0].toUpperCase()}</a></div>
 )}
+
+export const DetailHeader = ({item}) => {
+  return (
+    <Container
+      direction={"column"}
+      className={"title"}
+      alignItems={"center"}
+    >
+    <h1>{item.estado}</h1>
+    <div style={{margin: 10}}>
+      <div>
+        <p>¿Te interesa información de otro estado?</p>
+      </div>
+      <div 
+        className="button-container"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>
+          <button className="states-action" type="button" style={{backgroundColor: '#fff', flex: 1, height: 30, minHeight: '42px'}}>
+            <span style={{color: '#5176FF'}}>[SELECCIONA]</span>
+          </button>
+      </div>
+      <div style={{marginTop: 80}}>
+        <p>Quédate en casa y lávate las manos.</p>
+      </div>
+    </div>
+    </Container>
+  );
+}
