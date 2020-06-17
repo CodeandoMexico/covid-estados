@@ -25,7 +25,6 @@ import { Icon, Container, Counter, Box, LinkTo, Badge } from "../Components";
 function Detail({ estados }) {
   const { id } = useParams();
   const item = estados[id] || false;
-  console.log('> ITEM', item);
 
   let violencia_genero_en_linea = [];
   let violencia_genero_telefono = [];

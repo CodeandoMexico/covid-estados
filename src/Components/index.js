@@ -44,5 +44,5 @@ export const LinkTo = ({ v }) => {
 )}
 
 export const Badge = ({ children, variant }) => {
-  return (<sapn className={`badge badge-${variant}`}>{children}</sapn>)
+  return (<span className={`badge badge-${variant}`}>{children}</span>)
 }
