@@ -111,27 +111,30 @@ function Detail({ estados }) {
           <h2>¿Tienes síntomas?</h2>
           <h4>Hazte la prueba en línea</h4>
           <Container>
-            {item.app_android === "no" &&
+            {( item.app_android === "no" &&
               item.sms === "no" &&
               item.app_ios === "no" &&
-              item.prueba_web === "no" &&
-              "No hay información por el momento."}
-          </Container>
-          <Container>
-            {item.prueba_web !== "no" && (
-              <Icon image={web} text={"Sitio Web"} />
-            )}
-            {item.app_ios !== "no" && (
-              <Icon image={apple} text={"App-ios"} link={item.app_ios} />
-            )}
-          </Container>
-          <Container>
-            {item.app_android !== "no" && (
-              <Icon image={android} text={"App-and"} link={item.app_android} />
-            )}
-            {item.sms !== "no" && (
-              <Icon image={sms} text={"Sms"} link={item.sms} />
-            )}
+              item.prueba_web === "no" ) ?
+              "No hay información por el momento."
+              :<>
+              <Container>
+                {item.prueba_web !== "no" && (
+                  <Icon image={web} text={"Sitio Web"} />
+                )}
+                {item.app_ios !== "no" && (
+                  <Icon image={apple} text={"App-ios"} link={item.app_ios} />
+                )}
+              </Container>
+              <Container>
+                {item.app_android !== "no" && (
+                  <Icon image={android} text={"App-and"} link={item.app_android} />
+                )}
+                {item.sms !== "no" && (
+                  <Icon image={sms} text={"Sms"} link={item.sms} />
+                )}
+              </Container>
+              </>
+            }
           </Container>
         </Container>
         <Container className={"movileHide"}>
