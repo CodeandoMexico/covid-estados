@@ -138,7 +138,7 @@ function Detail({ estados, estadosArr }) {
               item.sms === "no" &&
               item.app_ios === "no" &&
               item.prueba_web === "no" ) ?
-              "No hay información por el momento."
+              "Tu estado no tiene pruebas en línea. Si tienes síntomas o quieres más información, puedes llamar a las líneas locales de atención."
               :<>
               <Container>
                 {item.prueba_web !== "no" && (
