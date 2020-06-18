@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './components.scss';
 
 export const Box = ({ children, direction = 'row' }) => (
@@ -42,3 +43,23 @@ export const LinkTo = ({ v }) => {
   return (
   <div><a href={link} target="_blank" rel="noopener noreferrer">{v[0].toUpperCase()}</a></div>
 )}
+
+export const Badge = ({ children, variant }) => {
+  return (<span className={`badge badge-${variant}`}>{children}</span>)
+}
+
+export const EstadosDropDown = ({ estados, callback = ()=>{} }) => {
+  console.log(estados)
+  if(estados.length>1) {
+    return (<div className="states-options">
+      {estados.map((e,i) => (
+        <Link className="states-option" 
+          to={"/estado/"+e.id} 
+          onClick={() => callback()}
+          key={i}> { e.fields.estado }</Link>
+      ))}
+    </div>)
+    
+  }
+  return <></>
+}

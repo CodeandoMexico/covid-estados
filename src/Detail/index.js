@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Route } from "react-router-dom";
 import Err404 from "../Err404";
 
@@ -20,12 +20,20 @@ import docs from "../assets/docs.svg";
 import whatsapp from "../assets/whatsapp.svg";
 import cat from "../assets/cat.svg";
 
-import { Icon, Container, Counter, Box, LinkTo } from "../Components";
+import { 
+  Icon, 
+  Container, 
+  Counter, 
+  Box, 
+  LinkTo, 
+  Badge, 
+  EstadosDropDown 
+} from "../Components";
 
-function Detail({ estados }) {
+function Detail({ estados, estadosArr }) {
+  const [dropdown, setDropdown] = useState(false);
   const { id } = useParams();
   const item = estados[id] || false;
-  // console.log('> ITEM', item);
 
   let violencia_genero_en_linea = [];
   let violencia_genero_telefono = [];
@@ -63,9 +71,10 @@ function Detail({ estados }) {
         >
           <h1>{item.estado}</h1>
           ¿Te interesa información de otro estado?
-          <button className="states-action" type="button">
-            [SELECCIONA]
-          </button>
+          <nav className="states">
+            <button className="states-action" onClick={() => setDropdown(!dropdown)} type="button">[SELECCIONA]</button>
+              {dropdown && <EstadosDropDown estados={estadosArr} callback={() => setDropdown(!dropdown)}/>}
+          </nav>
           Quédate en casa y lávate las manos.
         </Container>
 
@@ -101,8 +110,22 @@ function Detail({ estados }) {
           </Box>
         </Container>
 
-        <Container>
-          <Box>Medidas oficiales</Box>
+        <Container className="text-primary no-margin">
+          <Box direction={"column"}>
+            <h3>MEDIDAS OFICIALES</h3>
+            <h5>SEMÁFORO</h5>
+            <p direction={"column"}>
+              Nivel de riesgo: 
+                  <Badge variant="red" direction={"column"}>{item["nivel de riesgo"]}</Badge>
+            </p>
+            <p direction={"column"}>
+              Tendencia:
+                  <Badge variant="red" direction={"column"}>{item.tendencia}</Badge>
+            </p>
+            <p>
+            {item["medidas-01"]}
+              </p>
+          </Box>
         </Container>
       </Container>
 
@@ -111,27 +134,30 @@ function Detail({ estados }) {
           <h2>¿Tienes síntomas?</h2>
           <h4>Hazte la prueba en línea</h4>
           <Container>
-            {item.app_android === "no" &&
+            {( item.app_android === "no" &&
               item.sms === "no" &&
               item.app_ios === "no" &&
-              item.prueba_web === "no" &&
-              "No hay información por el momento."}
-          </Container>
-          <Container>
-            {item.prueba_web !== "no" && (
-              <Icon image={web} text={"Sitio Web"} />
-            )}
-            {item.app_ios !== "no" && (
-              <Icon image={apple} text={"App-ios"} link={item.app_ios} />
-            )}
-          </Container>
-          <Container>
-            {item.app_android !== "no" && (
-              <Icon image={android} text={"App-and"} link={item.app_android} />
-            )}
-            {item.sms !== "no" && (
-              <Icon image={sms} text={"Sms"} link={item.sms} />
-            )}
+              item.prueba_web === "no" ) ?
+              "No hay información por el momento."
+              :<>
+              <Container>
+                {item.prueba_web !== "no" && (
+                  <Icon image={web} text={"Sitio Web"} />
+                )}
+                {item.app_ios !== "no" && (
+                  <Icon image={apple} text={"App-ios"} link={item.app_ios} />
+                )}
+              </Container>
+              <Container>
+                {item.app_android !== "no" && (
+                  <Icon image={android} text={"App-and"} link={item.app_android} />
+                )}
+                {item.sms !== "no" && (
+                  <Icon image={sms} text={"Sms"} link={item.sms} />
+                )}
+              </Container>
+              </>
+            }
           </Container>
         </Container>
         <Container className={"movileHide"}>
@@ -245,5 +271,6 @@ function Detail({ estados }) {
 
 const mapStateToProps = (state) => ({
   estados: state.estadosObj,
+  estadosArr: state.estadosArr,
 });
 export default connect(mapStateToProps)(Detail);

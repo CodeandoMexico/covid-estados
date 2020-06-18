@@ -105,6 +105,50 @@
   }
 }
 
+.badge {
+  border-radius: 25px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 20px;
+  text-transform: capitalize;
+  &.badge-red {
+    background-color: #E60000;
+  }
+}
+.states {
+  text-align: center;
+  width: 320px;
+  margin: auto;
+  position: relative;
+  .states-action {
+    border-radius: 3px;
+    margin: $m-space auto 0;
+    max-width: 320px;
+    width: 320px;
+  }
+  .states-options {
+    background: #fff;
+    border: 1px solid #efefef;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+    width: 320px;
+    height: 27vh;
+    overflow: scroll;
+    position: absolute;
+    top: 90px;
+    .states-option {
+      background: #fff;
+      display: block;
+      line-height: 3em;
+      text-decoration: none;
+    }
+  }
+}
+
+
 @media (max-width: 920px) {
   #codeandocovid > .container {
     flex-direction: column;
