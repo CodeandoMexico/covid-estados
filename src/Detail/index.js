@@ -223,7 +223,10 @@ function Detail({ estados }) {
       <Container direction={"column"} alignItems={"center"}>
         <p>
           *Este es un esfuerzo voluntario, si encuentras información incorrecta
-          o quieres agregar algo, llena este formulario
+          o quieres agregar algo, llena este
+          <a href="https://forms.gle/ZRvgM8ysqubNW15T7" target="_blank">
+            formulario
+          </a>
         </p>
         <a
           href="https://airtable.com/shrmp4rtdUkGu8BAn"
