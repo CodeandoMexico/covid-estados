@@ -8,7 +8,7 @@ export const Box = ({ children, direction = 'row' }) => (
 )
 export const Counter = ({ title, number }) => (
   <div className="counter">
-    <span>{title}</span>
+    <span className="couter-title">{title}</span>
     <div>
       {number}
     </div>
