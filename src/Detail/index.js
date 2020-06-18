@@ -73,8 +73,8 @@ function Detail({ estados }) {
           <Box direction={"column"}>
             <Container>
               <Counter title={"Casos confirmados"} number={140} />
-              <Counter title={"Casos confirmados"} number={140} />
-              <Counter title={"Casos confirmados"} number={140} />
+              <Counter title={"Casos Activos"} number={140} />
+              <Counter title={"Sospechosos"} number={140} />
             </Container>
             <Container>
               <Container alignItems={"center"}>
