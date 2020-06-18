@@ -48,7 +48,7 @@ export const Badge = ({ children, variant }) => {
   return (<span className={`badge badge-${variant}`}>{children}</span>)
 }
 
-export const EstadosDropDown = ({ estados, callback }) => {
+export const EstadosDropDown = ({ estados, callback = ()=>{} }) => {
   console.log(estados)
   if(estados.length>1) {
     return (<div className="states-options">
