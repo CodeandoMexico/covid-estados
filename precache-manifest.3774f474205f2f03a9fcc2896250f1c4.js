@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "917f579912a0c7b20914e6a1b6dd2f91",
+    "revision": "89aaae5c704cbb21fd079a49e7ca1a42",
     "url": "/CodeandoMexico/covid-estados/index.html"
   },
   {
-    "revision": "1b8069fe23c1e97efe8f",
-    "url": "/CodeandoMexico/covid-estados/static/css/main.41b645dd.chunk.css"
+    "revision": "8c4f053d267de7018f6e",
+    "url": "/CodeandoMexico/covid-estados/static/css/main.600b55b4.chunk.css"
   },
   {
-    "revision": "1962a8cbb1c2f4f94077",
-    "url": "/CodeandoMexico/covid-estados/static/js/2.e6ba8ec4.chunk.js"
+    "revision": "4b3ce70b6f5d9976de83",
+    "url": "/CodeandoMexico/covid-estados/static/js/2.b31ef4c7.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/CodeandoMexico/covid-estados/static/js/2.e6ba8ec4.chunk.js.LICENSE.txt"
+    "url": "/CodeandoMexico/covid-estados/static/js/2.b31ef4c7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1b8069fe23c1e97efe8f",
-    "url": "/CodeandoMexico/covid-estados/static/js/main.3c03d22a.chunk.js"
+    "revision": "8c4f053d267de7018f6e",
+    "url": "/CodeandoMexico/covid-estados/static/js/main.184cc1d4.chunk.js"
   },
   {
     "revision": "c6799a816c00eb1b2810",
@@ -46,6 +46,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9c1bdd82df8588108f5918b3b087aa59",
     "url": "/CodeandoMexico/covid-estados/static/media/docs.9c1bdd82.svg"
+  },
+  {
+    "revision": "98871f7e6ccbb2049e5eb18b264b335d",
+    "url": "/CodeandoMexico/covid-estados/static/media/facebook.98871f7e.svg"
+  },
+  {
+    "revision": "4814f3abbbae969e28ed3a8691e2b9c2",
+    "url": "/CodeandoMexico/covid-estados/static/media/github.4814f3ab.svg"
   },
   {
     "revision": "684f0a9a13cd09cdc474e0a42c8d5e0f",
@@ -82,6 +90,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d2f3f5fa3b96d0d1dc6f9cd78ec568ff",
     "url": "/CodeandoMexico/covid-estados/static/media/telephone2.d2f3f5fa.svg"
+  },
+  {
+    "revision": "1c8514bf43fd070de693f4e3944a8193",
+    "url": "/CodeandoMexico/covid-estados/static/media/twitter.1c8514bf.svg"
   },
   {
     "revision": "4066e7fc20378f13dfb86159f1d04453",

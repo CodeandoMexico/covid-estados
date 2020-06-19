@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/CodeandoMexico/covid-estados/precache-manifest.6706c9b4f57b54b244428b80d6990562.js"
+  "/CodeandoMexico/covid-estados/precache-manifest.3774f474205f2f03a9fcc2896250f1c4.js"
 );
 
 self.addEventListener('message', (event) => {

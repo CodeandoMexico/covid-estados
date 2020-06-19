@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/CodeandoMexico/covid-estados/static/css/main.41b645dd.chunk.css",
-    "main.js": "/CodeandoMexico/covid-estados/static/js/main.3c03d22a.chunk.js",
-    "main.js.map": "/CodeandoMexico/covid-estados/static/js/main.3c03d22a.chunk.js.map",
+    "main.css": "/CodeandoMexico/covid-estados/static/css/main.600b55b4.chunk.css",
+    "main.js": "/CodeandoMexico/covid-estados/static/js/main.184cc1d4.chunk.js",
+    "main.js.map": "/CodeandoMexico/covid-estados/static/js/main.184cc1d4.chunk.js.map",
     "runtime-main.js": "/CodeandoMexico/covid-estados/static/js/runtime-main.5aaace49.js",
     "runtime-main.js.map": "/CodeandoMexico/covid-estados/static/js/runtime-main.5aaace49.js.map",
-    "static/js/2.e6ba8ec4.chunk.js": "/CodeandoMexico/covid-estados/static/js/2.e6ba8ec4.chunk.js",
-    "static/js/2.e6ba8ec4.chunk.js.map": "/CodeandoMexico/covid-estados/static/js/2.e6ba8ec4.chunk.js.map",
+    "static/js/2.b31ef4c7.chunk.js": "/CodeandoMexico/covid-estados/static/js/2.b31ef4c7.chunk.js",
+    "static/js/2.b31ef4c7.chunk.js.map": "/CodeandoMexico/covid-estados/static/js/2.b31ef4c7.chunk.js.map",
     "index.html": "/CodeandoMexico/covid-estados/index.html",
-    "precache-manifest.6706c9b4f57b54b244428b80d6990562.js": "/CodeandoMexico/covid-estados/precache-manifest.6706c9b4f57b54b244428b80d6990562.js",
+    "precache-manifest.3774f474205f2f03a9fcc2896250f1c4.js": "/CodeandoMexico/covid-estados/precache-manifest.3774f474205f2f03a9fcc2896250f1c4.js",
     "service-worker.js": "/CodeandoMexico/covid-estados/service-worker.js",
-    "static/css/main.41b645dd.chunk.css.map": "/CodeandoMexico/covid-estados/static/css/main.41b645dd.chunk.css.map",
-    "static/js/2.e6ba8ec4.chunk.js.LICENSE.txt": "/CodeandoMexico/covid-estados/static/js/2.e6ba8ec4.chunk.js.LICENSE.txt",
+    "static/css/main.600b55b4.chunk.css.map": "/CodeandoMexico/covid-estados/static/css/main.600b55b4.chunk.css.map",
+    "static/js/2.b31ef4c7.chunk.js.LICENSE.txt": "/CodeandoMexico/covid-estados/static/js/2.b31ef4c7.chunk.js.LICENSE.txt",
     "static/media/android.svg": "/CodeandoMexico/covid-estados/static/media/android.c7af8d3d.svg",
     "static/media/apple.svg": "/CodeandoMexico/covid-estados/static/media/apple.ee0404f0.svg",
     "static/media/cat.svg": "/CodeandoMexico/covid-estados/static/media/cat.a1700742.svg",
     "static/media/codeando.svg": "/CodeandoMexico/covid-estados/static/media/codeando.86926323.svg",
     "static/media/codeandomexico.svg": "/CodeandoMexico/covid-estados/static/media/codeandomexico.88b693a3.svg",
     "static/media/docs.svg": "/CodeandoMexico/covid-estados/static/media/docs.9c1bdd82.svg",
+    "static/media/facebook.svg": "/CodeandoMexico/covid-estados/static/media/facebook.98871f7e.svg",
+    "static/media/github.svg": "/CodeandoMexico/covid-estados/static/media/github.4814f3ab.svg",
     "static/media/home.svg": "/CodeandoMexico/covid-estados/static/media/home.684f0a9a.svg",
     "static/media/hospital.svg": "/CodeandoMexico/covid-estados/static/media/hospital.6bd8ce18.svg",
     "static/media/ilovehome.svg": "/CodeandoMexico/covid-estados/static/media/ilovehome.c766b930.svg",
@@ -27,13 +29,14 @@
     "static/media/sms.svg": "/CodeandoMexico/covid-estados/static/media/sms.aafdda80.svg",
     "static/media/telephone.svg": "/CodeandoMexico/covid-estados/static/media/telephone.ddad123c.svg",
     "static/media/telephone2.svg": "/CodeandoMexico/covid-estados/static/media/telephone2.d2f3f5fa.svg",
+    "static/media/twitter.svg": "/CodeandoMexico/covid-estados/static/media/twitter.1c8514bf.svg",
     "static/media/web.svg": "/CodeandoMexico/covid-estados/static/media/web.4066e7fc.svg",
     "static/media/whatsapp.svg": "/CodeandoMexico/covid-estados/static/media/whatsapp.ce506480.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5aaace49.js",
-    "static/js/2.e6ba8ec4.chunk.js",
-    "static/css/main.41b645dd.chunk.css",
-    "static/js/main.3c03d22a.chunk.js"
+    "static/js/2.b31ef4c7.chunk.js",
+    "static/css/main.600b55b4.chunk.css",
+    "static/js/main.184cc1d4.chunk.js"
   ]
 }
