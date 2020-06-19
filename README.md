@@ -27,11 +27,11 @@ ___
 
 * [flkt](https://github.com/flkt-crnpio)
 * [wotanwotan](https://github.com/wotanwotan)
-* [ajd01] (https://github.com/ajd01)
-* [ponentesincausa] (https://github.com/ponentesincausa)
-* [jmanuelc87] (https://github.com/jmanuelc87)
-* [EdgarVaguencia] (https://github.com/EdgarVaguencia)
-* [RodolfoFerro] (https://github.com/RodolfoFerro)
+* [ajd01](https://github.com/ajd01)
+* [ponentesincausa](https://github.com/ponentesincausa)
+* [jmanuelc87](https://github.com/jmanuelc87)
+* [EdgarVaguencia](https://github.com/EdgarVaguencia)
+* [RodolfoFerro](https://github.com/RodolfoFerro)
 
 `{}` con ❤️ por la comunidad de [Codeando México](http://www.codeandomexico.org).
 
