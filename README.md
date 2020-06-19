@@ -5,7 +5,7 @@
 </p>
 
 # COVID19
-Los 32 estados de México tienen distintos protocolos y acciones, adicionales a las medidas federales, para hacer frente al COVID19. Este proyecto recopila, sistematiza y facilita el acceso a información oficial relevante, líneas de atención y medidas de restricción o protección implementadas por los gobiernos estatales.
+Con el fin de la emergencia a nivel nacional, ahora es competencia de los 32 estados definir protocolos y medidas para hacer frente al COVID19. Este proyecto recopila, sistematiza y facilita el acceso a información oficial relevante, líneas de atención y medidas de restricción o protección implementadas por los gobiernos estatales.
 
 ___
 
@@ -27,6 +27,11 @@ ___
 
 * [flkt](https://github.com/flkt-crnpio)
 * [wotanwotan](https://github.com/wotanwotan)
+* [ajd01](https://github.com/ajd01)
+* [ponentesincausa](https://github.com/ponentesincausa)
+* [jmanuelc87](https://github.com/jmanuelc87)
+* [EdgarVaguencia](https://github.com/EdgarVaguencia)
+* [RodolfoFerro](https://github.com/RodolfoFerro)
 
 `{}` con ❤️ por la comunidad de [Codeando México](http://www.codeandomexico.org).
 

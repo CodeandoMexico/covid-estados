@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Route } from "react-router-dom";
 import Err404 from "../Err404";
 
@@ -20,9 +20,18 @@ import docs from "../assets/docs.svg";
 import whatsapp from "../assets/whatsapp.svg";
 import cat from "../assets/cat.svg";
 
-import { Icon, Container, Counter, Box, LinkTo, Badge } from "../Components";
+import {
+  Icon,
+  Container,
+  Counter,
+  Box,
+  LinkTo,
+  Badge,
+  EstadosDropDown
+} from "../Components";
 
-function Detail({ estados }) {
+function Detail({ estados, estadosArr }) {
+  const [dropdown, setDropdown] = useState(false);
   const { id } = useParams();
   const item = estados[id] || false;
 
@@ -89,9 +98,10 @@ function Detail({ estados }) {
         >
           <h1>{item.estado}</h1>
           ¿Te interesa información de otro estado?
-          <button className="states-action" type="button">
-            [SELECCIONA]
-          </button>
+          <nav className="states">
+            <button className="states-action boton-interno text-primary" onClick={() => setDropdown(!dropdown)} type="button">[SELECCIONA]</button>
+              {dropdown && <EstadosDropDown estados={estadosArr} callback={() => setDropdown(!dropdown)}/>}
+          </nav>
           Quédate en casa y lávate las manos.
         </Container>
 
@@ -99,8 +109,8 @@ function Detail({ estados }) {
           <Box direction={"column"}>
             <Container>
               <Counter title={"Casos confirmados"} number={140} />
-              <Counter title={"Casos confirmados"} number={140} />
-              <Counter title={"Casos confirmados"} number={140} />
+              <Counter title={"Casos Activos"} number={140} />
+              <Counter title={"Sospechosos"} number={140} />
             </Container>
             <Container>
               <Container alignItems={"center"}>
@@ -163,7 +173,7 @@ function Detail({ estados }) {
               item.sms === "no" &&
               item.app_ios === "no" &&
               item.prueba_web === "no" ) ?
-              "No hay información por el momento."
+              "Tu estado no tiene pruebas en línea. Si tienes síntomas o quieres más información, puedes llamar a las líneas locales de atención."
               :<>
               <Container>
                 {item.prueba_web !== "no" && (
@@ -274,7 +284,10 @@ function Detail({ estados }) {
       <Container direction={"column"} alignItems={"center"}>
         <p>
           *Este es un esfuerzo voluntario, si encuentras información incorrecta
-          o quieres agregar algo, llena este formulario
+          o quieres agregar algo, llena este
+          <a href="https://forms.gle/ZRvgM8ysqubNW15T7" target="_blank">
+            formulario
+          </a>
         </p>
         <a
           href="https://airtable.com/shrmp4rtdUkGu8BAn"
@@ -293,5 +306,6 @@ function Detail({ estados }) {
 
 const mapStateToProps = (state) => ({
   estados: state.estadosObj,
+  estadosArr: state.estadosArr,
 });
 export default connect(mapStateToProps)(Detail);

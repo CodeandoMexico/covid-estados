@@ -95,6 +95,13 @@
     display: flex;
     border-radius: 60px;
     margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  .couter-title {
+    margin-bottom: 0;
+    display: flex;
+    min-height: 45px;
+    align-items: center;
   }
 }
 
@@ -120,6 +127,38 @@
     background-color: #6EAF1B;
   }
 }
+.states {
+  text-align: center;
+  width: 320px;
+  margin: auto;
+  align-items: center;
+  position: relative;
+  .states-action {
+    border-radius: 100rem;
+    margin: $m-space auto 0;
+    max-width: 320px;
+    width: 320px;
+    background-color: map-get($m-colors, "primary");
+  }
+  .states-options {
+    background: #fff;
+    border: 1px solid #efefef;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+    width: 320px;
+    height: 27vh;
+    overflow: scroll;
+    position: absolute;
+    top: 90px;
+    .states-option {
+      background: #fff;
+      display: block;
+      line-height: 3em;
+      text-decoration: none;
+    }
+  }
+}
+
 
 @media (max-width: 920px) {
   #codeandocovid > .container {
