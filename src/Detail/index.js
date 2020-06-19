@@ -52,6 +52,33 @@ function Detail({ estados }) {
     }
   }
 
+  const getVariant = (value, type) => {
+    let posibilities = []
+    if (type === 'nivel') {
+      posibilities = [
+        { text: "maximo", value: "red" },
+        { text: "alto", value: "orange" },
+        { text: "medio", value: "yellow" },
+        { text: "bajo", value: "green" },
+      ]
+    } else if (type === "tendencia") {
+      posibilities = [
+        { text: "incremento", value: "red" },
+        { text: "estable", value: "orange" },
+        { text: "moderado", value: "yellow" },
+        { text: "franco", value: "green" },
+      ]
+    }
+    if (posibilities.length === 0) {
+      return 'red'
+    }
+    for (let i in posibilities) {
+      if (value.indexOf(posibilities[i].text) !== -1) {
+        return posibilities[i].value
+      }
+    }
+  }
+
   return item ? (
     <React.Fragment>
       <Container>
@@ -106,11 +133,19 @@ function Detail({ estados }) {
             <h5>SEMÁFORO</h5>
             <p direction={"column"}>
               Nivel de riesgo: 
-                  <Badge variant="red" direction={"column"}>{item["nivel de riesgo"]}</Badge>
+                <Badge 
+                  variant={getVariant(item["nivel de riesgo"], "nivel")} 
+                  direction={"column"}>
+                    {item["nivel de riesgo"]}
+                </Badge>
             </p>
             <p direction={"column"}>
               Tendencia:
-                  <Badge variant="red" direction={"column"}>{item.tendencia}</Badge>
+                <Badge 
+                  variant={getVariant(item.tendencia, "tendencia")} 
+                  direction={"column"}>
+                    {item.tendencia}
+                </Badge>
             </p>
             <p>
             {item["medidas-01"]}
