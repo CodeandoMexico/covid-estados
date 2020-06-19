@@ -12,12 +12,20 @@
   }
   .row {
     padding-top: $m-space;
-    padding-bottom: $m-space;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+
+    &:nth-of-type(odd) {
+      flex-direction: column-reverse;
+    }
   }
   .col {
     flex: 0 0 45%;
+
+    img {
+      width: 100%;
+    }
   }
 }
 
@@ -33,5 +41,20 @@
   }
   img {
     height: 70px;
+  }
+}
+
+@media only screen and (min-width: map-deep-get($m-queries, "laptop", "since")) {
+  .about-container {
+    .row {
+        padding-top: $m-space;
+        padding-bottom: $m-space;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+      }
+      .col {
+        flex: 0 0 45%;
+      }
   }
 }
