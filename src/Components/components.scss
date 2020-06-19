@@ -125,10 +125,11 @@
   align-items: center;
   position: relative;
   .states-action {
-    border-radius: 3px;
+    border-radius: 100rem;
     margin: $m-space auto 0;
     max-width: 320px;
     width: 320px;
+    background-color: map-get($m-colors, "primary");
   }
   .states-options {
     background: #fff;

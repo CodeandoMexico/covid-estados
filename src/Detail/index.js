@@ -20,14 +20,14 @@ import docs from "../assets/docs.svg";
 import whatsapp from "../assets/whatsapp.svg";
 import cat from "../assets/cat.svg";
 
-import { 
-  Icon, 
-  Container, 
-  Counter, 
-  Box, 
-  LinkTo, 
-  Badge, 
-  EstadosDropDown 
+import {
+  Icon,
+  Container,
+  Counter,
+  Box,
+  LinkTo,
+  Badge,
+  EstadosDropDown
 } from "../Components";
 
 function Detail({ estados, estadosArr }) {
@@ -72,7 +72,7 @@ function Detail({ estados, estadosArr }) {
           <h1>{item.estado}</h1>
           ¿Te interesa información de otro estado?
           <nav className="states">
-            <button className="states-action" onClick={() => setDropdown(!dropdown)} type="button">[SELECCIONA]</button>
+            <button className="states-action boton-interno text-primary" onClick={() => setDropdown(!dropdown)} type="button">[SELECCIONA]</button>
               {dropdown && <EstadosDropDown estados={estadosArr} callback={() => setDropdown(!dropdown)}/>}
           </nav>
           Quédate en casa y lávate las manos.
@@ -115,7 +115,7 @@ function Detail({ estados, estadosArr }) {
             <h3>MEDIDAS OFICIALES</h3>
             <h5>SEMÁFORO</h5>
             <p direction={"column"}>
-              Nivel de riesgo: 
+              Nivel de riesgo:
                   <Badge variant="red" direction={"column"}>{item["nivel de riesgo"]}</Badge>
             </p>
             <p direction={"column"}>
