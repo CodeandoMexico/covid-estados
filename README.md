@@ -32,6 +32,7 @@ ___
 * [jmanuelc87](https://github.com/jmanuelc87)
 * [EdgarVaguencia](https://github.com/EdgarVaguencia)
 * [RodolfoFerro](https://github.com/RodolfoFerro)
+* [josellausas](https://github.com/josellausas)
 
 `{}` con ❤️ por la comunidad de [Codeando México](http://www.codeandomexico.org).
 
