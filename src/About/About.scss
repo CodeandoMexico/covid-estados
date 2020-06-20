@@ -52,9 +52,14 @@
         display: flex;
         justify-content: space-between;
         flex-direction: row;
+        align-items: center;
+        &:nth-of-type(odd) {
+          flex-direction: row;
+        }
+        .col {
+          flex: 0 0 45%;
+        }
       }
-      .col {
-        flex: 0 0 45%;
-      }
+
   }
 }
