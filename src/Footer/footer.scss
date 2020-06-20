@@ -1,0 +1,42 @@
+@import '../_vars.scss';
+
+
+.footer {
+  background-color: map-get($m-colors, "primary");
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  margin-top: auto;
+
+  .footer-url {
+    color: #fff;
+  }
+  .div-logo {
+    width: 320px;
+  }
+
+  .footer-sobre {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    > * {
+      padding: 1rem;
+    }
+  }
+
+}
+
+
+@media only screen and (min-width: map-deep-get($m-queries, "laptop", "since")) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-around;
+
+    .footer-sobre {
+      flex-direction: row;
+    }
+  }
+}
