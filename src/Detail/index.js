@@ -108,13 +108,20 @@ function Detail({ estados, estadosArr }) {
         <Container direction={"column"}>
           <Box direction={"column"}>
             <Container>
-              <Counter title={"Casos confirmados"} number={140} />
+              <Counter title={"Casos Confirmados"} number={140} />
               <Counter title={"Casos Activos"} number={140} />
               <Counter title={"Sospechosos"} number={140} />
             </Container>
             <Container>
               <Container alignItems={"center"}>
-                <button>Conóce más</button>
+                <a
+                  href="https://coronavirus.gob.mx/datos/"
+                  className="button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button>Conóce más</button>
+                </a>
               </Container>
             </Container>
           </Box>
