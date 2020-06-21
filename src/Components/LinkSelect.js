@@ -6,8 +6,6 @@ import "./LinkSelectStyle.scss";
 const LinkSelect = ({ options = {}, placeholder, type }) => {
   const [isActive, setActive] = useState(false);
   let { id } = useParams();
-  console.log(useParams());
-
   useEffect(() => {
     setActive(false);
   }, [id]);
