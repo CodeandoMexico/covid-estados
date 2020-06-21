@@ -1,33 +1,12 @@
 @import '../_vars.scss';
 
-.container {
-  display: flex;
-  // min-height: 100%;
-  flex: 1;
-  &.direction-column {
-    flex-direction: column;
-  }
-  &.direction-row {
-    flex-direction: row;
-  }
-  &.center {
-    justify-content: center;
-    align-items: center;
-  }
-  &.end {
-    align-items: flex-end;
-  }
-  &.bgBlue {
-    background-color: map-get($m-colors, "bg-primary");
-  }
-}
-
 .title {
   background-color: map-get($m-colors, "primary");
   color: #fff;
   border-radius: 0px 0px 47px 0px;
   h1 {
     color: #fff;
+    font-size: 2.8rem;
   }
 }
 
@@ -35,10 +14,10 @@
   background-color: #fff;
   box-shadow: 3px 4px 10px rgba(70, 79, 108, 0.27);
   border-radius: 19px;
-  margin: 40px;
   padding: 20px;
   flex: 1;
   display: flex;
+  margin-top: 1rem;
   &.direction-column {
     flex-direction: column;
   }
@@ -76,27 +55,7 @@
   }
 }
 
-.counter {
-  flex: 1;
-  align-items: center;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  div {
-    align-self: center;
-    font-size: 20px;
-    border: 5px solid #fff;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.13), 0px 0px 0px 1px #D4D4D4 inset;
-    width: 78px;
-    height: 78px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    border-radius: 60px;
-    margin-top: 10px;
-  }
-}
+
 
 @media (max-width: 920px) {
   #codeandocovid > .container {
