@@ -6,6 +6,7 @@ import Home from './Home';
 import Detail from './Detail';
 import About from './About';
 import NavMain from './NavMain';
+import Footer from './Footer';
 import './App.scss';
 
 class App extends React.Component {
@@ -37,6 +38,7 @@ class App extends React.Component {
           <Route path="/sobre-el-proyecto" component={ About } />
           <Route component={ Home } />
         </Switch>
+        <Footer />
       </BrowserRouter>
     );
   }

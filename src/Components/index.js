@@ -16,6 +16,9 @@ const Icon = ({ image, text, link = "#" }) => (
     <span>{text}</span>
   </a>
 );
+export const Badge = ({ children, variant }) => {
+  return (<span className={`badge badge-${variant}`}>{children}</span>)
+}
 const LinkTo = ({ v }) => {
   let link = "";
   if (v[0] === "whatsapp")

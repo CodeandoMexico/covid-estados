@@ -34,8 +34,8 @@ export default function InformationDetail({ item }) {
     <Container direction={"column"} className={"bgBlue"}>
       <Container className={"mobileColumn pd-1"}>
         <Container direction={"column"} alignItems={"center"}>
-          <h1>Informacion relevante</h1>
-          <img src={cat} alt={"Informacion relevante"} className="movileHide" />
+          <h1>Información relevante</h1>
+          <img src={cat} alt={"Información relevante"} className="movileHide" />
         </Container>
         <Container direction={"column"}>
           <Box direction={"column"}>
