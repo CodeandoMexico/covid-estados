@@ -7,7 +7,7 @@ const INITIAL_STATE = {
   load: false,
   fetch: false,
   data: [],
-  details: {},
+  details: [],
   error: "",
 };
 

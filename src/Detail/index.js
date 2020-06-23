@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import "./index.scss";
+import { getEstate } from "../Selectors";
 import Err404 from "../Err404";
 import { Container, Counter, Box, LinkSelect, Badge } from "../Components";
 import Loader from "../Loader";
@@ -10,14 +10,14 @@ import InformationDetail from "./InformationDetail";
 import Symptoms from "./Symptoms";
 import telephone from "../assets/telephone.svg";
 import config from "./config";
+import "./index.scss";
 
 const Detail = () => {
   const { id } = useParams();
-  const { data: estados, load, error } = useSelector((state) => state.estados);
-
-  const item = estados.find((s) => s.id === id) || {};
-  const isItem = Object.keys(item).length > 0;
-  const { estado, telefono } = item || {};
+  const { data: estados, load } = useSelector((state) => state.estados);
+  const estadoDetail = useSelector((state) => getEstate(state, id));
+  const isItem = Object.keys(estadoDetail).length > 0;
+  const { estado, telefono } = estadoDetail || {};
   const phones = telefono ? telefono.split(",") : [];
 
   // TODO: Move in function abstract
@@ -50,7 +50,7 @@ const Detail = () => {
   if (!load && !isItem) {
     return <Route component={Err404} />;
   }
-  return load  ? (
+  return load ? (
     <Loader />
   ) : (
     <>
@@ -82,8 +82,12 @@ const Detail = () => {
         <Container direction={"column"} className="pd-1">
           <Box direction={"column"}>
             <Container>
-              {config.typeCases.map((type, index) => (
-                <Counter title={type.label} value={type.value} key={index} />
+              {config.typeCases.map((value, index) => (
+                <Counter
+                  title={value.label}
+                  value={estadoDetail[value.key]}
+                  key={index}
+                />
               ))}
             </Container>
             <Container alignItems={"center"} className="pd-1">
@@ -116,27 +120,27 @@ const Detail = () => {
             <p direction={"column"}>
               Nivel de riesgo:
               <Badge
-                variant={getVariant(item["nivel de riesgo"], "nivel")}
+                variant={getVariant(estadoDetail["nivel de riesgo"], "nivel")}
                 direction={"column"}
               >
-                {item["nivel de riesgo"]}
+                {estadoDetail["nivel de riesgo"]}
               </Badge>
             </p>
             <p direction={"column"}>
               Tendencia:
               <Badge
-                variant={getVariant(item.tendencia, "tendencia")}
+                variant={getVariant(estadoDetail.tendencia, "tendencia")}
                 direction={"column"}
               >
-                {item.tendencia}
+                {estadoDetail.tendencia}
               </Badge>
             </p>
-            <p>{item["medidas-01"]}</p>
+            <p>{estadoDetail["medidas-01"]}</p>
           </Box>
         </Container>
       </Container>
-      <Symptoms item={item} />
-      <InformationDetail item={item} />
+      <Symptoms item={estadoDetail} />
+      <InformationDetail item={estadoDetail} />
       <Container direction={"column"} alignItems={"center"}>
         <p>
           *Este es un esfuerzo voluntario, si encuentras información incorrecta
