@@ -2,14 +2,15 @@
 .nav-main {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: $m-space * .2;
+  padding: $m-space 0 0 0;
   margin: 0 auto;
   max-width: $m-max-width;
+  flex-direction: column;
 }
 .nav-codeando {
   width: 148.5px;
 }
+
 .nav-link {
   font-size: 12.5px;
   line-height: 1em;
@@ -17,9 +18,23 @@
   text-transform: uppercase;
 }
 
+.nav-redes {
+  margin-left: 10px;
+  height: 30px;
+}
+
+.nav-sobre {
+  display: none;
+}
+
+
 @media only screen and (min-width: map-deep-get($m-queries, "tablet", "since")) {
   .nav-main {
     padding: $m-space;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
   }
   .nav-codeando {
     width: 198px;
@@ -27,4 +42,19 @@
   .nav-link {
     font-size: 15px;
   }
+
+  .nav-redes {
+    margin-left: 10px;
+    height: 40px;
+  }
+
+  .nav-sobre {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    > * {
+      padding: 5px;
+    }
+  }
+
 }
