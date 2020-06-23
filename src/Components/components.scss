@@ -1,5 +1,4 @@
 @import '../_vars.scss';
-
 .title {
   background-color: map-get($m-colors, "primary");
   color: #fff;
@@ -54,6 +53,28 @@
     transition: .1s ease-in;
   }
 }
+.badge {
+  border-radius: 25px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 20px;
+  text-transform: capitalize;
+  &.badge-red {
+    background-color: #E60000;
+  }
+  &.badge-orange {
+    background-color: #F97700;
+  }
+  &.badge-yellow {
+    background-color: #F6BC27;
+  }
+  &.badge-green {
+    background-color: #6EAF1B;
+  }
+}
 
 
 
@@ -65,10 +86,13 @@
     flex-direction: column!important;
   }
   .movileHide {
-    display: none;
+    display: none!important;
   }
   .title {
     border-radius: 0px;
+  }
+  .direction-grid{
+    display: block!important;
   }
 }
 

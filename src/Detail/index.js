@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import "./index.scss";
 import Err404 from "../Err404";
-import { Container, Counter, Box, LinkSelect } from "../Components";
+import { Container, Counter, Box, LinkSelect, Badge } from "../Components";
 
 import InformationDetail from "./InformationDetail";
 import Symptoms from "./Symptoms";
@@ -20,6 +20,34 @@ const Detail = () => {
   const { estado, telefono } = item || {};
   const phones = telefono ? telefono.split(",") : [];
 
+
+  // TODO: Move in function abstract
+  const getVariant = (value, type) => {
+    let posibilities = [];
+    if (type === "nivel") {
+      posibilities = [
+        { text: "maximo", value: "red" },
+        { text: "alto", value: "orange" },
+        { text: "medio", value: "yellow" },
+        { text: "bajo", value: "green" },
+      ];
+    } else if (type === "tendencia") {
+      posibilities = [
+        { text: "incremento", value: "red" },
+        { text: "estable", value: "orange" },
+        { text: "moderado", value: "yellow" },
+        { text: "franco", value: "green" },
+      ];
+    }
+    if (posibilities.length === 0) {
+      return "red";
+    }
+    for (let i in posibilities) {
+      if (value.indexOf(posibilities[i].text) !== -1) {
+        return posibilities[i].value;
+      }
+    }
+  };
   if (!isItem) {
     return <Route component={Err404} />;
   }
@@ -81,11 +109,32 @@ const Detail = () => {
           </Box>
         </Container>
 
-        <Container>
-          <Box>Medidas oficiales</Box>
+        <Container className="pd-1">
+          <Box direction={"column"}>
+            <h3>MEDIDAS OFICIALES</h3>
+            <h5>SEMÁFORO</h5>
+            <p direction={"column"}>
+              Nivel de riesgo:
+              <Badge
+                variant={getVariant(item["nivel de riesgo"], "nivel")}
+                direction={"column"}
+              >
+                {item["nivel de riesgo"]}
+              </Badge>
+            </p>
+            <p direction={"column"}>
+              Tendencia:
+              <Badge
+                variant={getVariant(item.tendencia, "tendencia")}
+                direction={"column"}
+              >
+                {item.tendencia}
+              </Badge>
+            </p>
+            <p>{item["medidas-01"]}</p>
+          </Box>
         </Container>
       </Container>
-
       <Symptoms item={item} />
       <InformationDetail item={item} />
       <Container direction={"column"} alignItems={"center"}>
