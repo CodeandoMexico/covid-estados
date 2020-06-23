@@ -10,10 +10,7 @@ import NavMain from "./NavMain";
 import "./App.scss";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   componentDidMount() {
     const { getEstados } = this.props.actions;
     getEstados();

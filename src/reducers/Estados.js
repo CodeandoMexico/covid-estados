@@ -7,7 +7,7 @@ const INITIAL_STATE = {
   load: false,
   fetch: false,
   data: [],
-  estado: {},
+  details: {},
   error: "",
 };
 
@@ -22,7 +22,7 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
     case SUCCESS:
       return {
         ...state,
-        data: action.payload,
+        ...action.payload,
         load: false,
       };
 
@@ -41,5 +41,4 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
     default:
       return state;
   }
-  return state;
 }

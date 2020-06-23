@@ -7,7 +7,10 @@ import web from "../assets/web.svg";
 import sms from "../assets/sms.svg";
 import apple from "../assets/apple.svg";
 
+const DETAIL_DATA = [ 'app_android', 'sms', 'app_ios', 'prueba_web' ]
+
 export default function Symptoms({ item }) {
+  const { app_android, sms, app_ios, prueba_web } = item;
   return (
     <Container>
       <Container direction={"column"} alignItems={"center"}>

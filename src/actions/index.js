@@ -2,7 +2,6 @@ import axios from "axios";
 import { csvToJson } from "../utils";
 import { LOAD, SUCCESS, ERROR } from "../reducers/Estados";
 
-
 //Actions
 export const getEstados = () => async (dispatch, getState) => {
   dispatch({
@@ -29,7 +28,10 @@ export const getEstados = () => async (dispatch, getState) => {
     });
     dispatch({
       type: SUCCESS,
-      payload: lisEstados,
+      payload: {
+        data: lisEstados,
+        details: responseDetil,
+      },
     });
   } catch (error) {
     dispatch({
@@ -38,10 +40,3 @@ export const getEstados = () => async (dispatch, getState) => {
     });
   }
 };
-
-
-export const getDetail = (id) =>(dispatch, getState) =>{
-  const state = getState()
-  console.log(id)
-  console.log(state)
-}
