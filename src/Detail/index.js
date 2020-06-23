@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import "./index.scss";
 import Err404 from "../Err404";
 import { Container, Counter, Box, LinkSelect, Badge } from "../Components";
-
+import Loader from "../Loader";
 import InformationDetail from "./InformationDetail";
 import Symptoms from "./Symptoms";
 import telephone from "../assets/telephone.svg";
@@ -13,13 +13,12 @@ import config from "./config";
 
 const Detail = () => {
   const { id } = useParams();
-  const estados = useSelector((state) => state.estados.data);
+  const { data: estados, load, error } = useSelector((state) => state.estados);
 
   const item = estados.find((s) => s.id === id) || {};
   const isItem = Object.keys(item).length > 0;
   const { estado, telefono } = item || {};
   const phones = telefono ? telefono.split(",") : [];
-
 
   // TODO: Move in function abstract
   const getVariant = (value, type) => {
@@ -48,11 +47,12 @@ const Detail = () => {
       }
     }
   };
-  if (!isItem) {
+  if (!load && !isItem) {
     return <Route component={Err404} />;
   }
-  console.log(item);
-  return (
+  return load  ? (
+    <Loader />
+  ) : (
     <>
       <Container>
         <Container
