@@ -5,14 +5,7 @@ import { LinkSelect } from "../Components";
 import "./Home.scss";
 import home from "../assets/home.svg";
 
-function Home({ states }) {
-  let listStates = states.map((s) => {
-    return {
-      option: s.fields.estado,
-      url: `/estado/${s.id}`,
-      id: s.id,
-    };
-  });
+function Home({ estados }) {
   return (
     <React.Fragment>
       <div className="home">
@@ -34,15 +27,20 @@ function Home({ states }) {
             Una espacio con información oficial por estado para quien no sabe
             qué hacer
           </p>
-          <LinkSelect options={listStates} placeholder="[SELECCIONA]" />
+          <LinkSelect options={estados} placeholder="[SELECCIONA]" />
         </div>
       </div>
     </React.Fragment>
   );
 }
 
-const mapStateToProps = (state) => ({
-  states: state.estadosArr,
-});
+const mapStateToProps = (state) => {
+  const {
+    estados: { data: estados },
+  } = state;
+  return {
+    estados,
+  };
+};
 
 export default connect(mapStateToProps)(Home);
