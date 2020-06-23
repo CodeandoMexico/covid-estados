@@ -1,0 +1,28 @@
+@import "../_vars.scss";
+
+.container {
+  display: flex;
+  // min-height: 100%;
+  flex: 1;
+  &.direction-column {
+    flex-direction: column;
+  }
+  &.direction-row {
+    flex-direction: row;
+  }
+  &.center {
+    justify-content: center;
+    align-items: center;
+  }
+  &.end {
+    align-items: flex-end;
+  }
+  &.bgBlue {
+    background-color: map-get($m-colors, "bg-primary");
+  }
+  @for $i from 1 to 5 {
+    &.pd-#{$i} {
+      padding: #{$i}rem;
+    }
+  }
+}
