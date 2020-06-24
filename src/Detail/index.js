@@ -1,32 +1,24 @@
 import React from "react";
 import { Route } from "react-router-dom";
-
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-
-import "./index.scss";
+import { getEstate } from "../Selectors";
 import Err404 from "../Err404";
 import { Container, Counter, Box, LinkSelect, Badge } from "../Components";
-
+import Loader from "../Loader";
 import InformationDetail from "./InformationDetail";
 import Symptoms from "./Symptoms";
 import telephone from "../assets/telephone.svg";
 import config from "./config";
+import "./index.scss";
 
-function Detail({ estados = [] }) {
+const Detail = () => {
   const { id } = useParams();
-  let listStates = estados.map((s) => {
-    return {
-      option: s.fields.estado,
-      url: `/estado/${s.id}`,
-      id: s.id,
-    };
-  });
-  const item = estados.find((s) => s.id === id) || {};
-  const isItem = Object.keys(item).length > 0;
-  const { estado, telefono } = item.fields || {};
+  const { data: estados, load } = useSelector((state) => state.estados);
+  const estadoDetail = useSelector((state) => getEstate(state, id));
+  const isItem = Object.keys(estadoDetail).length > 0;
+  const { estado, telefono } = estadoDetail || {};
   const phones = telefono ? telefono.split(",") : [];
-
 
   // TODO: Move in function abstract
   const getVariant = (value, type) => {
@@ -55,11 +47,12 @@ function Detail({ estados = [] }) {
       }
     }
   };
-  if (!isItem) {
+  if (!load && !isItem) {
     return <Route component={Err404} />;
   }
-
-  return (
+  return load ? (
+    <Loader />
+  ) : (
     <>
       <Container>
         <Container
@@ -73,7 +66,7 @@ function Detail({ estados = [] }) {
               <p>¿Te interesa información de otro estado?</p>
             </div>
             <LinkSelect
-              options={listStates}
+              options={estados}
               type="white"
               placeholder="[SELECCIONA]"
             />
@@ -83,14 +76,18 @@ function Detail({ estados = [] }) {
           </div>
         </Container>
 
-        {/* 
+        {/*
           TODO: Move in component
          */}
         <Container direction={"column"} className="pd-1">
           <Box direction={"column"}>
             <Container>
-              {config.typeCases.map((type, index) => (
-                <Counter title={type.label} value={type.value} key={index} />
+              {config.typeCases.map((value, index) => (
+                <Counter
+                  title={value.label}
+                  value={estadoDetail[value.key]}
+                  key={index}
+                />
               ))}
             </Container>
             <Container alignItems={"center"} className="pd-1">
@@ -116,34 +113,34 @@ function Detail({ estados = [] }) {
           </Box>
         </Container>
 
-        <Container>
+        <Container className="pd-1">
           <Box direction={"column"}>
             <h3>MEDIDAS OFICIALES</h3>
             <h5>SEMÁFORO</h5>
             <p direction={"column"}>
               Nivel de riesgo:
               <Badge
-                variant={getVariant(item.fields["nivel de riesgo"], "nivel")}
+                variant={getVariant(estadoDetail["nivel de riesgo"], "nivel")}
                 direction={"column"}
               >
-                {item.fields["nivel de riesgo"]}
+                {estadoDetail["nivel de riesgo"]}
               </Badge>
             </p>
             <p direction={"column"}>
               Tendencia:
               <Badge
-                variant={getVariant(item.fields.tendencia, "tendencia")}
+                variant={getVariant(estadoDetail.tendencia, "tendencia")}
                 direction={"column"}
               >
-                {item.fields.tendencia}
+                {estadoDetail.tendencia}
               </Badge>
             </p>
-            <p>{item.fields["medidas-01"]}</p>
+            <p>{estadoDetail["medidas-01"]}</p>
           </Box>
         </Container>
       </Container>
-      <Symptoms item={item} />
-      <InformationDetail item={item} />
+      <Symptoms item={estadoDetail} />
+      <InformationDetail item={estadoDetail} />
       <Container direction={"column"} alignItems={"center"}>
         <p>
           *Este es un esfuerzo voluntario, si encuentras información incorrecta
@@ -160,9 +157,6 @@ function Detail({ estados = [] }) {
       </Container>
     </>
   );
-}
+};
 
-const mapStateToProps = (state) => ({
-  estados: state.estadosArr,
-});
-export default connect(mapStateToProps)(Detail);
+export default Detail;

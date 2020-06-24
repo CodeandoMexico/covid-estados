@@ -2,13 +2,20 @@
 
 .container {
   display: flex;
-  // min-height: 100%;
   flex: 1;
+  &.jumbotron {
+    padding: 10rem 0;
+  }
   &.direction-column {
     flex-direction: column;
   }
   &.direction-row {
     flex-direction: row;
+  }
+  &.direction-grid{
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-columns: 1fr 1fr;
   }
   &.center {
     justify-content: center;

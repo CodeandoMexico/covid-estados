@@ -4,14 +4,20 @@
   "version": "0.0.0",
   "homepage": "http://github.codeandomexico.org/covid-estados/",
   "dependencies": {
+    "axios": "^0.19.2",
     "mol-normalize": "^1.0.2",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-loadingg": "^1.7.2",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
