@@ -7,31 +7,47 @@ import web from "../assets/web.svg";
 import sms from "../assets/sms.svg";
 import apple from "../assets/apple.svg";
 
+const DETAIL_DATA = {
+  app_android: {
+    icon: android,
+    text: "App-and",
+  },
+  sms: {
+    icon: sms,
+    text: "Sms",
+  },
+  app_ios: {
+    icon: apple,
+    text: "App-ios",
+  },
+  prueba_web: {
+    icon: web,
+    text: "Sitio Web",
+  },
+};
+
 export default function Symptoms({ item }) {
+  const isEmptyDetails =
+    Object.keys(DETAIL_DATA).filter((k) => item[k] !== "no").length === 0;
   return (
-    <Container>
+    <Container className="jumbotron">
       <Container direction={"column"} alignItems={"center"}>
-        <h2>¿Tienes síntomas?</h2>
-        <h4>Hazte la prueba en línea</h4>
-        <Container>
-          {item.app_android === "no" &&
-            item.sms === "no" &&
-            item.app_ios === "no" &&
-            item.prueba_web === "no" &&
-            "No hay información por el momento."}
-        </Container>
-        <Container>
-          {item.prueba_web !== "no" && <Icon image={web} text={"Sitio Web"} />}
-          {item.app_ios !== "no" && (
-            <Icon image={apple} text={"App-ios"} link={item.app_ios} />
-          )}
-        </Container>
-        <Container>
-          {item.app_android !== "no" && (
-            <Icon image={android} text={"App-and"} link={item.app_android} />
-          )}
-          {item.sms !== "no" && (
-            <Icon image={sms} text={"Sms"} link={item.sms} />
+        <Container direction={"column"}>
+          <h2>¿Tienes síntomas?</h2>
+          <h4>Hazte la prueba en línea</h4>
+          {isEmptyDetails && <p>No hay información por el momento.</p>}
+          {!isEmptyDetails && (
+            <Container direction={"grid"}>
+              {Object.keys(DETAIL_DATA).map(
+                (k) =>
+                  item[k] !== "no" && (
+                    <Icon
+                      image={DETAIL_DATA[k].icon}
+                      text={DETAIL_DATA[k].text}
+                    />
+                  )
+              )}
+            </Container>
           )}
         </Container>
       </Container>

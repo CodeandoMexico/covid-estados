@@ -86,10 +86,13 @@
     flex-direction: column!important;
   }
   .movileHide {
-    display: none;
+    display: none!important;
   }
   .title {
     border-radius: 0px;
+  }
+  .direction-grid{
+    display: block!important;
   }
 }
 

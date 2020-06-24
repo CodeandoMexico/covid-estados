@@ -1,18 +1,15 @@
 const typeCases = [
   {
-    key: "",
-    label: "Casos Confirmados",
-    value: "120",
+    key: "confirmadosnuevos",
+    label: "Casos Nuevos",
   },
   {
-    key: "",
+    key: "confirmadostotales",
     label: "Casos Activos",
-    value: "120",
   },
   {
-    key: "",
-    label: "Sospechosos",
-    value: "120",
+    key: "negativostotales",
+    label: "Defunciones",
   },
 ];
 
