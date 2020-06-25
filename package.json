@@ -2,9 +2,10 @@
   "name": "covid-estados",
   "description": "Una guía de información oficial, líneas de atención y medidas por estado frente al COVID",
   "version": "0.0.0",
-  "homepage": "http://github.codeandomexico.org/covid-estados/",
+  "homepage": ".",
   "dependencies": {
     "axios": "^0.19.2",
+    "express": "^4.17.1",
     "mol-normalize": "^1.0.2",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -22,7 +23,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "server": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
