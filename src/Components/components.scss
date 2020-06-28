@@ -1,4 +1,14 @@
 @import '../_vars.scss';
+
+.mt {
+  margin-top: $m-space;
+}
+.my {
+  margin-top: $m-space;
+  margin-bottom: $m-space;
+}
+
+
 .title {
   background-color: map-get($m-colors, "primary");
   color: #fff;
@@ -8,6 +18,16 @@
     color: #fff;
     font-size: 2.8rem;
   }
+}
+
+.color-base {
+  color: map-get($m-colors, "font");
+}
+.color-white {
+  color: #fff;
+}
+.color-primary {
+  color: map-get($m-colors, "primary");
 }
 
 .box {

@@ -114,10 +114,9 @@ const Detail = () => {
         </Container>
 
         <Container className="pd-1">
-          <Box direction={"column"}>
-            <h3>MEDIDAS OFICIALES</h3>
-            <h5>SEMÁFORO</h5>
-            <p direction={"column"}>
+          <Box direction={"column"} color={"primary"}>
+            <h3>SEMÁFORO</h3>
+            <div>
               Nivel de riesgo:
               <Badge
                 variant={getVariant(estadoDetail["nivel de riesgo"], "nivel")}
@@ -125,8 +124,8 @@ const Detail = () => {
               >
                 {estadoDetail["nivel de riesgo"]}
               </Badge>
-            </p>
-            <p direction={"column"}>
+            </div>
+            <div>
               Tendencia:
               <Badge
                 variant={getVariant(estadoDetail.tendencia, "tendencia")}
@@ -134,8 +133,8 @@ const Detail = () => {
               >
                 {estadoDetail.tendencia}
               </Badge>
-            </p>
-            <p>{estadoDetail["medidas-01"]}</p>
+            </div>
+            <p className="mt">{estadoDetail["medidas-01"]}</p>
           </Box>
         </Container>
       </Container>

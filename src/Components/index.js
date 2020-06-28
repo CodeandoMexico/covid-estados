@@ -4,8 +4,12 @@ import Container from "./Container";
 import LinkSelect from "./LinkSelect";
 import Counter from "./Counter";
 
-const Box = ({ children, direction = "row" }) => (
-  <div className={`box direction-${direction}`}>{children}</div>
+const Badge = ({ children, variant }) => (
+  <span className={`badge badge-${variant}`}>{children}</span>
+)
+
+const Box = ({ children, direction = "row", color = "base" }) => (
+  <div className={`box direction-${direction} color-${color}`}>{children}</div>
 );
 
 const Icon = ({ image, text, link = "#" }) => (
@@ -16,9 +20,7 @@ const Icon = ({ image, text, link = "#" }) => (
     <span>{text}</span>
   </a>
 );
-export const Badge = ({ children, variant }) => {
-  return (<span className={`badge badge-${variant}`}>{children}</span>)
-}
+
 const LinkTo = ({ v }) => {
   let link = "";
   if (v[0] === "whatsapp")
@@ -34,4 +36,4 @@ const LinkTo = ({ v }) => {
   );
 };
 
-export { Box, Counter, Icon, LinkTo, Container, LinkSelect };
+export { Badge, Box, Counter, Icon, LinkTo, Container, LinkSelect };
