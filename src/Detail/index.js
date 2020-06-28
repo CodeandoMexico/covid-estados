@@ -25,7 +25,7 @@ const Detail = () => {
     let posibilities = [];
     if (type === "nivel") {
       posibilities = [
-        { text: "maximo", value: "red" },
+        { text: "máximo", value: "red" },
         { text: "alto", value: "orange" },
         { text: "medio", value: "yellow" },
         { text: "bajo", value: "green" },
@@ -140,10 +140,17 @@ const Detail = () => {
       </Container>
       <Symptoms item={estadoDetail} />
       <InformationDetail item={estadoDetail} />
-      <Container direction={"column"} alignItems={"center"}>
+      <Container direction={"column text-center"}>
         <p>
           *Este es un esfuerzo voluntario, si encuentras información incorrecta
-          o quieres agregar algo, llena este formulario
+          o quieres agregar algo, llena este 
+          <a 
+            href="https://docs.google.com/forms/d/1HhbbSjhkRB9rYA32lnm0b6e5mUQpDk8Eq_Yrl7-MUjI/viewform?edit_requested=true"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            formulario
+          </a>
         </p>
         <a
           href="https://airtable.com/shrmp4rtdUkGu8BAn"
