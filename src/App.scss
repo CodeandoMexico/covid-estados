@@ -15,12 +15,20 @@ body {
   flex-direction: column;
 }
 
+p {
+  font-size: 1rem;
+  line-height: 1.3rem;
+}
+
 #codeandocovid {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-p {
-  font-size: 1rem;
-  line-height: 1.8rem;
+
+@media only screen and (min-width: map-deep-get($m-queries, "laptop", "since")) {
+  p {
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
 }
