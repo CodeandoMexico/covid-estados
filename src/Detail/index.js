@@ -91,7 +91,7 @@ const Detail = () => {
               ))}
             </Container>
             <Container alignItems={"center"} className="pd-1">
-              <button>Conóce más</button>
+              <button>Conoce más</button>
             </Container>
           </Box>
           <Box direction={"column"}>
