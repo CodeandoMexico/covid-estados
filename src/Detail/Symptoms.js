@@ -30,11 +30,11 @@ export default function Symptoms({ item }) {
   const isEmptyDetails =
     Object.keys(DETAIL_DATA).filter((k) => item[k] !== "no").length === 0;
   return (
-    <Container className="jumbotron">
+    <Container className="jumbotron color-primary">
       <Container direction={"column"} alignItems={"center"}>
         <Container direction={"column"}>
           <h2>¿Tienes síntomas?</h2>
-          <h4>Hazte la prueba en línea</h4>
+          <h4>Haz la prueba en línea</h4>
           {isEmptyDetails && <p>No hay información por el momento.</p>}
           {!isEmptyDetails && (
             <Container direction={"grid"}>
