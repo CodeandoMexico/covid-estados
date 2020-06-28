@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9168f5f69bdb1d3b7285a80beeaa6310",
+    "revision": "02f34540286817c40bf36d61485bdb3b",
     "url": "/covid-estados/index.html"
   },
   {
-    "revision": "b513291b07c54643ea55",
-    "url": "/covid-estados/static/css/main.0841c502.chunk.css"
+    "revision": "0754b61e9b956e02795a",
+    "url": "/covid-estados/static/css/main.af7ea2d0.chunk.css"
   },
   {
-    "revision": "e0d2d2124fcc8eeac966",
-    "url": "/covid-estados/static/js/2.97f4f13e.chunk.js"
+    "revision": "c1bdd1356fac4c435181",
+    "url": "/covid-estados/static/js/2.c1ba9401.chunk.js"
   },
   {
     "revision": "216e537bacc64f9dbaabd26649a9ab95",
-    "url": "/covid-estados/static/js/2.97f4f13e.chunk.js.LICENSE.txt"
+    "url": "/covid-estados/static/js/2.c1ba9401.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b513291b07c54643ea55",
-    "url": "/covid-estados/static/js/main.0d1ec82a.chunk.js"
+    "revision": "0754b61e9b956e02795a",
+    "url": "/covid-estados/static/js/main.8c01f80c.chunk.js"
   },
   {
     "revision": "d58360ce47773898d404",
