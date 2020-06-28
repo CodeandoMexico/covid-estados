@@ -10,14 +10,18 @@ function Footer() {
   return (
     <footer>
       <div className="footer">
-        <NavLink to="http://codeandomexico.org/">
+        <NavLink to="/covid-estados/">
           <img src={logo} alt="codeando mexico" />
         </NavLink>
         <p>
             Hecho con <span role="img" aria-label="sheep">❤️</span> por la comunidad de{" "}
-            <NavLink className="footer-link" to="http://codeandomexico.org/">
+            <a 
+              className="footer-link" 
+              href="http://codeandomexico.org/"
+              target="_blank"
+              rel="noopener noreferrer">
               Codeando México
-            </NavLink>
+            </a>
         </p>
         <div className="footer-social">
           <NavLink className="footer-link" to="/sobre-el-proyecto">
