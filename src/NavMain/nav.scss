@@ -2,59 +2,38 @@
 .nav-main {
   display: flex;
   align-items: center;
-  padding: $m-space 0 0 0;
-  margin: 0 auto;
-  max-width: $m-max-width;
+  justify-content: center;
+  padding: $m-space*.5 0;
   flex-direction: column;
+  font-size: 15px;
 }
 .nav-codeando {
-  width: 148.5px;
+  max-width: 100%;
 }
-
-.nav-link {
-  font-size: 12.5px;
-  line-height: 1em;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
 .nav-redes {
-  margin-left: 10px;
-  height: 30px;
+  margin-left: .5rem;
+  height: 28px;
 }
-
 .nav-sobre {
   display: none;
 }
-
 
 @media only screen and (min-width: map-deep-get($m-queries, "tablet", "since")) {
   .nav-main {
     padding: $m-space;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 1200px;
-    width: 100%;
+    width: calc(100% - #{$m-space * 2});
+    margin: 0 auto;
+    max-width: $m-max-width;
   }
-  .nav-codeando {
-    width: 198px;
-  }
-  .nav-link {
-    font-size: 15px;
-  }
-
-  .nav-redes {
-    margin-left: 10px;
-    height: 40px;
-  }
-
   .nav-sobre {
     display: flex;
     align-items: center;
     flex-direction: row;
-    > * {
-      padding: 5px;
-    }
   }
-
+  .nav-link {
+    text-transform: uppercase;
+    text-decoration: none;
+  }
 }

@@ -1,11 +1,38 @@
 @import '../_vars.scss';
-.title {
-  background-color: map-get($m-colors, "primary");
+
+
+.estado {
+  background: linear-gradient(map-get($m-colors, "primary") 87%, #fff 87%);
   color: #fff;
-  border-radius: 0px 0px 47px 0px;
-  h1 {
+  text-align: center;
+  margin-top: -90px;
+  padding: $m-space * .5;
+  .estado-codeando {
+    margin-bottom: $m-space * .5;
+  }
+  .estado-title {
+    margin-top: $m-space;
+    margin-bottom: $m-space * 1.5;
     color: #fff;
-    font-size: 2.8rem;
+  }
+}
+@media only screen and (min-width: map-deep-get($m-queries, "laptop", "since")) {
+  .estado {
+    background: map-get($m-colors, "primary");
+    border-bottom-right-radius: 25px;
+    margin-top: -140px;
+    padding: $m-space;
+    flex: 1 1 30%;
+    max-width: 30%;
+    .estado-codeando {
+      margin-bottom: $m-space * .5;
+      text-align: left;
+    }
+    .estado-title {
+      margin-top: $m-space * 2;
+      margin-bottom: $m-space * 2;
+      font-size: 2.7rem;
+    }
   }
 }
 
@@ -87,9 +114,6 @@
   }
   .movileHide {
     display: none!important;
-  }
-  .title {
-    border-radius: 0px;
   }
   .direction-grid{
     display: block!important;

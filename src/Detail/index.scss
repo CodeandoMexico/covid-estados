@@ -2,14 +2,74 @@
 
 $margin-between-telephones: 10px;
 
-.states {
-  .boton-interno {
-    background-color: #fff;
-    padding: 1rem 0 !important;
-  }
+// color text
+.color-base {
+  color: map-get($m-colors, "font");
+}
+.color-white {
+  color: #fff;
+}
+.color-primary {
+  color: map-get($m-colors, "primary");
 }
 
+// align text
+.text-center {
+  text-align: center;
+}
 
+// titles
+.title {
+  margin-bottom: 0;
+}
+.subtitle {
+  margin-top: 0;
+}
+
+// margin
+.mt {
+  margin-top: $m-space;
+}
+.mb {
+  margin-bottom: $m-space;
+}
+.my {
+  margin-top: $m-space;
+  margin-bottom: $m-space;
+}
+
+.link-btn {
+  background: map-get($m-colors, "primary");
+  box-shadow: 0 5px 7px rgba(0,0,0,.3);
+  color: #fff;
+  display: block;
+  text-align: center;
+  padding: $m-space *.25 $m-space;
+  border-radius: $m-space *.5;
+  text-decoration: none;
+  margin: $m-space auto 0;
+  width: 150px;
+  text-transform: uppercase;
+  font-size: .9rem;
+  &:hover {
+    background: #0f42ff;
+    box-shadow: 0 0px 0px rgba(0,0,0,.03);
+    color: #fff;
+  }
+}
+// .states {
+//   .boton-interno {
+//     background-color: #fff;
+//     padding: 1rem 0 !important;
+//   }
+// }
+
+// responsive view
+@media only screen and (max-width: map-deep-get($m-queries, "laptop", "since")) {
+  .hidden-mobile {
+    display: none;
+  }
+}
 
 ul.decoration {
   padding: 0;

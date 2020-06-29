@@ -2,12 +2,13 @@
 
 .home {
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 0 auto $m-space;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  flex: 1;
 }
 .cover {
   img {
