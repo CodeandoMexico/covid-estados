@@ -1,13 +1,5 @@
 @import '../_vars.scss';
 
-.mt {
-  margin-top: $m-space;
-}
-.my {
-  margin-top: $m-space;
-  margin-bottom: $m-space;
-}
-
 
 .estado {
   background: linear-gradient(map-get($m-colors, "primary") 87%, #fff 87%);

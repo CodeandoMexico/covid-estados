@@ -138,27 +138,18 @@ const Detail = () => {
       </Container>
       <Symptoms item={estadoDetail} />
       <InformationDetail item={estadoDetail} />
-      <Container direction={"column text-center"}>
+      <div className={"content text-center color-primary"}>
         <p>
-          *Este es un esfuerzo voluntario, si encuentras información incorrecta
-          o quieres agregar algo, llena este 
-          <a 
-            href="https://docs.google.com/forms/d/1HhbbSjhkRB9rYA32lnm0b6e5mUQpDk8Eq_Yrl7-MUjI/viewform?edit_requested=true"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            formulario
-          </a>
+          *Este es un esfuerzo voluntario, si encuentras información incorrecta o quieres agregar algo, llena este <a href="https://docs.google.com/forms/d/1HhbbSjhkRB9rYA32lnm0b6e5mUQpDk8Eq_Yrl7-MUjI/viewform?edit_requested=true" target="_blank" rel="noopener noreferrer">formulario</a>
         </p>
         <a
           href="https://airtable.com/shrmp4rtdUkGu8BAn"
-          className="button"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button>Descargar datos</button>
+          <button>DESCARGAR DATOS</button>
         </a>
-      </Container>
+      </div>
     </>
   );
 };

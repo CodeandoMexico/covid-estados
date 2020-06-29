@@ -40,3 +40,9 @@
     flex: 1;
   }
 }
+
+.content {
+  padding: $m-space;
+  margin: auto;
+  max-width: $m-max-width;
+}
