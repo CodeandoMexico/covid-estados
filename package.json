@@ -2,7 +2,7 @@
   "name": "covid-estados",
   "description": "Una guía de información oficial, líneas de atención y medidas por estado frente al COVID",
   "version": "0.0.0",
-  "homepage": ".",
+  "homepage": "https://github.com/CodeandoMexico/covid-estados",
   "dependencies": {
     "axios": "^0.19.2",
     "express": "^4.17.1",
