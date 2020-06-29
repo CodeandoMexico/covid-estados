@@ -71,7 +71,7 @@ const Detail = () => {
               placeholder="[SELECCIONA]"
             />
           </div>
-          <p>Quédate en casa y lávate las manos.</p>
+          <p className="hidden-mobile">Quédate en casa y lávate las manos.</p>
         </Container>
 
         {/*

@@ -20,7 +20,12 @@ $margin-between-telephones: 10px;
   }
 }
 
-
+// responsive view
+@media only screen and (max-width: map-deep-get($m-queries, "laptop", "since")) {
+  .hidden-mobile {
+    display: none;
+  }
+}
 
 ul.decoration {
   padding: 0;

@@ -10,7 +10,7 @@
 
 
 .estado {
-  background-color: map-get($m-colors, "primary");
+  background: linear-gradient(map-get($m-colors, "primary") 87%, #fff 87%);
   color: #fff;
   text-align: center;
   margin-top: -90px;
@@ -19,11 +19,14 @@
     margin-bottom: $m-space * .5;
   }
   .estado-title {
+    margin-top: $m-space;
+    margin-bottom: $m-space * 1.5;
     color: #fff;
   }
 }
 @media only screen and (min-width: map-deep-get($m-queries, "laptop", "since")) {
   .estado {
+    background: map-get($m-colors, "primary");
     border-bottom-right-radius: 25px;
     margin-top: -140px;
     padding: $m-space;
