@@ -2,6 +2,17 @@
 
 $margin-between-telephones: 10px;
 
+// color text
+.color-base {
+  color: map-get($m-colors, "font");
+}
+.color-white {
+  color: #fff;
+}
+.color-primary {
+  color: map-get($m-colors, "primary");
+}
+
 .states {
   .boton-interno {
     background-color: #fff;

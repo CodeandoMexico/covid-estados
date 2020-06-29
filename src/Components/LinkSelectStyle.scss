@@ -8,16 +8,18 @@
     button {
       background: white;
       color: #5176ff;
-      border-radius: 1rem;
+      border-radius: 2rem;
       height: 4rem;
     }
     .states-options {
-      top: 120px;
+      top: 80px;
+      height: 32vh;
+      border-radius: 2rem;
     }
   }
   .states-action {
     border-radius: 3px;
-    margin: $m-space auto 0;
+    margin: $m-space * .25 auto 0;
     max-width: 320px;
     width: 320px;
   }
@@ -27,10 +29,10 @@
     border-radius: 3px 3px 0 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     width: 320px;
-    height: 27vh;
+    height: 25.5vh;
     overflow: scroll;
     position: absolute;
-    top: 90px;
+    top: 55px;
     .states-option {
       background: #fff;
       display: block;

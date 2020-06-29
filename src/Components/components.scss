@@ -9,25 +9,36 @@
 }
 
 
-.title {
+.estado {
   background-color: map-get($m-colors, "primary");
   color: #fff;
-  border-radius: 0px 0px 47px 0px;
   text-align: center;
-  h1 {
+  margin-top: -90px;
+  padding: $m-space * .5;
+  .estado-codeando {
+    margin-bottom: $m-space * .5;
+  }
+  .estado-title {
     color: #fff;
-    font-size: 2.8rem;
   }
 }
-
-.color-base {
-  color: map-get($m-colors, "font");
-}
-.color-white {
-  color: #fff;
-}
-.color-primary {
-  color: map-get($m-colors, "primary");
+@media only screen and (min-width: map-deep-get($m-queries, "laptop", "since")) {
+  .estado {
+    border-bottom-right-radius: 25px;
+    margin-top: -140px;
+    padding: $m-space;
+    flex: 1 1 30%;
+    max-width: 30%;
+    .estado-codeando {
+      margin-bottom: $m-space * .5;
+      text-align: left;
+    }
+    .estado-title {
+      margin-top: $m-space * 2;
+      margin-bottom: $m-space * 2;
+      font-size: 2.7rem;
+    }
+  }
 }
 
 .box {
@@ -108,9 +119,6 @@
   }
   .movileHide {
     display: none!important;
-  }
-  .title {
-    border-radius: 0px;
   }
   .direction-grid{
     display: block!important;

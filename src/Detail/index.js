@@ -2,6 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { getEstate } from "../Selectors";
 import Err404 from "../Err404";
 import { Container, Counter, Box, LinkSelect, Badge } from "../Components";
@@ -9,6 +10,7 @@ import Loader from "../Loader";
 import InformationDetail from "./InformationDetail";
 import Symptoms from "./Symptoms";
 import telephone from "../assets/telephone.svg";
+import logo from "../assets/codeandomexico-bco.svg";
 import config from "./config";
 import "./index.scss";
 
@@ -57,23 +59,19 @@ const Detail = () => {
       <Container>
         <Container
           direction={"column"}
-          className={"title pd-1"}
-          alignItems={"center"}
+          className={"estado"}
         >
-          <h1>{estado}</h1>
-          <div style={{ margin: 10 }}>
-            <div>
-              <p>¿Te interesa información de otro estado?</p>
-            </div>
+          <NavLink className="estado-codeando" to="/covid-estados/"><img src={logo} alt="codeando mexico" /></NavLink>
+          <div className="flex">
+            <h1 className="estado-title">{estado}</h1>
+            <p>¿Te interesa información de otro estado?</p>
             <LinkSelect
               options={estados}
               type="white"
               placeholder="[SELECCIONA]"
             />
-            <div style={{ marginTop: 80 }}>
-              <p>Quédate en casa y lávate las manos.</p>
-            </div>
           </div>
+          <p>Quédate en casa y lávate las manos.</p>
         </Container>
 
         {/*
