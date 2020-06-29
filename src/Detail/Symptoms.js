@@ -33,8 +33,8 @@ export default function Symptoms({ item }) {
     <Container className="jumbotron color-primary">
       <Container direction={"column"} alignItems={"center"}>
         <Container direction={"column"}>
-          <h2>¿Tienes síntomas?</h2>
-          <h4>Haz la prueba en línea</h4>
+          <h2 className="title">¿Tienes síntomas?</h2>
+          <h4 className="subtitle">Haz la prueba en línea</h4>
           {isEmptyDetails && <p>No hay información por el momento.</p>}
           {!isEmptyDetails && (
             <Container direction={"grid"}>

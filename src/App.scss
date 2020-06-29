@@ -15,6 +15,15 @@ body {
   flex-direction: column;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: map-get($m-colors, "primary");
+}
+
 p {
   font-size: 1rem;
   line-height: 1.3rem;

@@ -13,6 +13,14 @@ $margin-between-telephones: 10px;
   color: map-get($m-colors, "primary");
 }
 
+// titles
+.title {
+  margin-bottom: 0;
+}
+.subtitle {
+  margin-top: 0;
+}
+
 .states {
   .boton-interno {
     background-color: #fff;
