@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getEstados } from "./actions";
+import { createBrowserHistory } from "history";
 import { BrowserRouter, Switch, Redirect, Route } from "react-router-dom";
 
 import Home from "./Home";
