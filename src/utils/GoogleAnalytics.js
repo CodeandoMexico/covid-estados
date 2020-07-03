@@ -50,13 +50,8 @@ GoogleAnalytics.propTypes = {
 const RouteTracker = () => <Route component={GoogleAnalytics} />;
 
 const init = (options = {}) => {
-  const isGAEnabled = process.env.NODE_ENV === "production";
-
-  if (isGAEnabled) {
-    ReactGA.initialize(process.env.GOOGLE_ANALYTICS);
-  }
-
-  return isGAEnabled;
+  ReactGA.initialize('UA-170809396-1');
+  return true;
 };
 
 export default {
