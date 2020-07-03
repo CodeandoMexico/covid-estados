@@ -61,7 +61,7 @@ const Detail = () => {
           direction={"column"}
           className={"estado"}
         >
-          <NavLink className="estado-codeando" to="/covid-estados/"><img src={logo} alt="codeando mexico" /></NavLink>
+          <NavLink className="estado-codeando" to="/"><img src={logo} alt="codeando mexico" /></NavLink>
           <div className="flex">
             <h1 className="estado-title">{estado}</h1>
             <p>¿Te interesa información de otro estado?</p>

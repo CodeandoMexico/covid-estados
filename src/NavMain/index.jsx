@@ -9,7 +9,7 @@ import './nav.scss';
 function NavBar() {
   return (
     <header className="nav-main">
-      <NavLink to="/covid-estados/"><img className="nav-codeando" src={logo} alt="codeando mexico" /></NavLink>
+      <NavLink to="/"><img className="nav-codeando" src={logo} alt="codeando mexico" /></NavLink>
       <div className="nav-sobre">
         <NavLink className="nav-link" to="/sobre-el-proyecto">Sobre el proyecto</NavLink>
         <div>
