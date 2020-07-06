@@ -38,11 +38,6 @@ $margin-between-telephones: 10px;
   margin-bottom: $m-space;
 }
 
-.button-box {
-  text-align: center;
-  margin-top: 1rem;
-}
-
 .link-btn {
   background: map-get($m-colors, "primary");
   box-shadow: 0 5px 7px rgba(0,0,0,.3);
@@ -61,6 +56,10 @@ $margin-between-telephones: 10px;
     box-shadow: 0 0px 0px rgba(0,0,0,.03);
     color: #fff;
   }
+}
+
+.phone-container {
+  justify-content: space-around;
 }
 // .states {
 //   .boton-interno {

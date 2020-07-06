@@ -38,7 +38,6 @@ const Detail = () => {
         { text: "estable", value: "orange" },
         { text: "moderado", value: "yellow" },
         { text: "franco", value: "green" },
-        { text: "sin información", value: "gray" }
       ];
     }
     if (posibilities.length === 0) {
@@ -89,21 +88,15 @@ const Detail = () => {
                 />
               ))}
             </Container>
-              <div className="button-box">
-                <a
-                  href="https://coronavirus.gob.mx/datos/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button>Conoce más</button>
-                </a>
-              </div>
+            <Container alignItems={"center"} className="pd-1">
+              <button>Conoce más</button>
+            </Container>
           </Box>
           <Box direction={"column"}>
-            <Container>
+            <Container className="center">
               <h4>Líneas locales de atención</h4>
             </Container>
-            <Container>
+            <Container className="phone-container">
               <ul className="decoration">
                 {phones.map((phone, index) => (
                   <li key={index}>{phone}</li>
@@ -112,7 +105,6 @@ const Detail = () => {
               <img
                 src={telephone}
                 alt="Quédate en casa"
-                className="margin-left"
               />
             </Container>
           </Box>

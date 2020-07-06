@@ -88,17 +88,15 @@ export default function InformationDetail({ item }) {
 
       <Container alignItems={"center"} className="pd-1">
         <h4>Para más información: </h4>
-        <div>
-          <a
-            href={item.web}
-            className="button"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ padding: "1rem" }}
-          >
-            <button>SITIO WEB OFICIAL</button>
-          </a>
-        </div>
+        <a
+          href={item.web}
+          className="button"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ padding: "1rem" }}
+        >
+          <button>SITIO WEB OFICIAL</button>
+        </a>
       </Container>
     </Container>
   );
