@@ -38,7 +38,6 @@ const Detail = () => {
         { text: "estable", value: "orange" },
         { text: "moderado", value: "yellow" },
         { text: "franco", value: "green" },
-        { text: "sin información", value: "gray" }
       ];
     }
     if (posibilities.length === 0) {
@@ -89,15 +88,9 @@ const Detail = () => {
                 />
               ))}
             </Container>
-              <div className="button-box">
-                <a
-                  href="https://coronavirus.gob.mx/datos/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button>Conoce más</button>
-                </a>
-              </div>
+            <Container alignItems={"center"} className="pd-1">
+              <button>Conoce más</button>
+            </Container>
           </Box>
           <Box direction={"column"}>
             <Container>
