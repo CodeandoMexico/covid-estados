@@ -2,6 +2,28 @@ import axios from "axios";
 import { csvToJson } from "../utils";
 import { LOAD, SUCCESS, ERROR } from "../reducers/Estados";
 
+// Auxiliar function for routes
+function urlify(str) {
+  var map = {
+      '-' : ' ',
+      'a' : 'á|à|ã|â|À|Á|Ã|Â',
+      'e' : 'é|è|ê|É|È|Ê',
+      'i' : 'í|ì|î|Í|Ì|Î',
+      'o' : 'ó|ò|ô|õ|Ó|Ò|Ô|Õ',
+      'u' : 'ú|ù|û|ü|Ú|Ù|Û|Ü',
+      'c' : 'ç|Ç',
+      'n' : 'ñ|Ñ'
+  };
+
+  str = str.toLowerCase();
+
+  for (var pattern in map) {
+    str = str.replace(new RegExp(map[pattern], 'g'), pattern);
+  };
+
+  return str;
+};
+
 //Actions
 export const getEstados = () => async (dispatch, getState) => {
   dispatch({
@@ -21,8 +43,8 @@ export const getEstados = () => async (dispatch, getState) => {
     const lisEstados = estados.map((s) => {
       return {
         option: s.fields.estado,
-        url: `/estado/${s.id}`,
-        id: s.id,
+        url: `/estado/${urlify(s.fields.estado)}`,
+        id: urlify(s.fields.estado),
         ...s.fields,
       };
     });
