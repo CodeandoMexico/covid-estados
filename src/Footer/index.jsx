@@ -10,7 +10,7 @@ function Footer() {
   return (
     <footer>
       <div className="footer">
-        <NavLink to="/covid-estados/">
+        <NavLink to="/">
           <img src={logo} alt="codeando mexico" />
         </NavLink>
         <p>

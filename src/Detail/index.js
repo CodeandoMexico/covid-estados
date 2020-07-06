@@ -38,6 +38,7 @@ const Detail = () => {
         { text: "estable", value: "orange" },
         { text: "moderado", value: "yellow" },
         { text: "franco", value: "green" },
+        { text: "sin información", value: "gray" }
       ];
     }
     if (posibilities.length === 0) {
@@ -61,7 +62,7 @@ const Detail = () => {
           direction={"column"}
           className={"estado"}
         >
-          <NavLink className="estado-codeando" to="/covid-estados/"><img src={logo} alt="codeando mexico" /></NavLink>
+          <NavLink className="estado-codeando" to="/"><img src={logo} alt="codeando mexico" /></NavLink>
           <div className="flex">
             <h1 className="estado-title">{estado}</h1>
             <p>¿Te interesa información de otro estado?</p>
@@ -88,9 +89,15 @@ const Detail = () => {
                 />
               ))}
             </Container>
-            <Container alignItems={"center"} className="pd-1">
-              <button>Conoce más</button>
-            </Container>
+              <div className="button-box">
+                <a
+                  href="https://coronavirus.gob.mx/datos/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button>Conoce más</button>
+                </a>
+              </div>
           </Box>
           <Box direction={"column"}>
             <Container>
