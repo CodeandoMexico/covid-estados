@@ -93,10 +93,10 @@ const Detail = () => {
             </Container>
           </Box>
           <Box direction={"column"}>
-            <Container>
+            <Container className="center">
               <h4>Líneas locales de atención</h4>
             </Container>
-            <Container>
+            <Container className="phone-container">
               <ul className="decoration">
                 {phones.map((phone, index) => (
                   <li key={index}>{phone}</li>
@@ -105,7 +105,6 @@ const Detail = () => {
               <img
                 src={telephone}
                 alt="Quédate en casa"
-                className="margin-left"
               />
             </Container>
           </Box>
