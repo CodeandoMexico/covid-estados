@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.b310f3b4.chunk.css",
+    "main.css": "/static/css/main.6f4fb7ba.chunk.css",
     "main.js": "/static/js/main.f77f288b.chunk.js",
     "main.js.map": "/static/js/main.f77f288b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ef4b7bff.js",
@@ -8,9 +8,9 @@
     "static/js/2.0a562f48.chunk.js": "/static/js/2.0a562f48.chunk.js",
     "static/js/2.0a562f48.chunk.js.map": "/static/js/2.0a562f48.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.fb7bb0a34031e961814c99212f87329d.js": "/precache-manifest.fb7bb0a34031e961814c99212f87329d.js",
+    "precache-manifest.6d0aa7255663c65a65d5a5bd20c0cb17.js": "/precache-manifest.6d0aa7255663c65a65d5a5bd20c0cb17.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.b310f3b4.chunk.css.map": "/static/css/main.b310f3b4.chunk.css.map",
+    "static/css/main.6f4fb7ba.chunk.css.map": "/static/css/main.6f4fb7ba.chunk.css.map",
     "static/js/2.0a562f48.chunk.js.LICENSE.txt": "/static/js/2.0a562f48.chunk.js.LICENSE.txt",
     "static/media/android.svg": "/static/media/android.c7af8d3d.svg",
     "static/media/apple.svg": "/static/media/apple.ee0404f0.svg",
@@ -40,7 +40,7 @@
   "entrypoints": [
     "static/js/runtime-main.ef4b7bff.js",
     "static/js/2.0a562f48.chunk.js",
-    "static/css/main.b310f3b4.chunk.css",
+    "static/css/main.6f4fb7ba.chunk.css",
     "static/js/main.f77f288b.chunk.js"
   ]
 }
