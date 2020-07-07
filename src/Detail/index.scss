@@ -72,11 +72,19 @@ $margin-between-telephones: 10px;
 //     padding: 1rem 0 !important;
 //   }
 // }
+.info-relevante {
+  width: 60%;
+  text-align: left;
+}
+
 
 // responsive view
 @media only screen and (max-width: map-deep-get($m-queries, "laptop", "since")) {
   .hidden-mobile {
     display: none;
+  }
+  .info-relevante {
+    text-align: center;
   }
 }
 

@@ -118,7 +118,7 @@ const Detail = () => {
         </Container>
 
         <Container className="pd-1">
-          <Box direction={"column"} color={"primary"}>
+          <Box direction={"column"}>
             <h3>SEMÁFORO</h3>
             <div>
               Nivel de riesgo:
