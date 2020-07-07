@@ -8,8 +8,16 @@ html {
 }
 
 .parent {
-  @media all and (min-width: 801px) {
+  @media all and (min-width: 601px) {
     height: 100%;
+  }
+}
+
+@media not all and (min-resolution:.001dpcm) { 
+  @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+    .safari_only {
+      height: auto;
+    }
   }
 }
 
