@@ -23,20 +23,18 @@ class App extends React.Component {
   render() {
     const customHistory = createBrowserHistory();
     return (
-      <div id="wrapper" style={{width: "100%", height: "100%", position: 'absolute', top: 0, left: 0}}>
-        <BrowserRouter history={customHistory}>
-          {GA.init() && <GA.RouteTracker />}
-          <NavMain />
-          <Switch>
-            <Redirect from="/home" to="/" />
-            <Route exact path="/" component={Home} />
-            <Route path="/estado/:id" component={Detail} />
-            <Route path="/sobre-el-proyecto" component={About} />
-            <Route component={Home} />
-          </Switch>
-          <Footer />
-        </BrowserRouter>
-      </div>
+      <BrowserRouter history={customHistory}>
+        {GA.init() && <GA.RouteTracker />}
+        <NavMain />
+        <Switch>
+          <Redirect from="/home" to="/" />
+          <Route exact path="/" component={Home} />
+          <Route path="/estado/:id" component={Detail} />
+          <Route path="/sobre-el-proyecto" component={About} />
+          <Route component={Home} />
+        </Switch>
+        <Footer />
+      </BrowserRouter>
     );
   }
 }
