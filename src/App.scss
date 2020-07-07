@@ -3,11 +3,11 @@
 @import "_vars.scss";
 @import "../node_modules/mol-normalize/scss/_normalize.scss";
 
-html {
+html, .parent {
   height: 100%;
 }
 
-body, .parent {
+body {
   height: 100%;
   min-height: 100vh;
   padding: 0;
