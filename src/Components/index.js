@@ -24,7 +24,7 @@ const Icon = ({ image, text, link = "#" }) => (
 const LinkTo = ({ v }) => {
   let link = "";
   if (v[0] === "whatsapp")
-    link = `https://api.whatsapp.com/send?phone=${v[1]}&text=Hola%20BC`;
+    link = `https://api.whatsapp.com/send?phone=${v[1]}`;
   else if (v[0] === "correo") link = `mailto:${v[1]}`;
   else link = v[1];
   return (
