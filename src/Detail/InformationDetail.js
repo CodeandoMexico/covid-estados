@@ -5,6 +5,8 @@ import "./informationDetail.scss";
 import hospital from "../assets/hospital.svg";
 import docs from "../assets/docs.svg";
 import whatsapp from "../assets/whatsapp.svg";
+import android from "../assets/android.svg";
+import apple from "../assets/apple.svg";
 import cat from "../assets/cat.svg";
 import telephone2 from "../assets/telephone2.svg";
 
@@ -36,7 +38,7 @@ export default function InformationDetail({ item }) {
       <Container className={"mobileColumn pd-1"}>
         <Container direction={"column"} alignItems={"center"}>
           <Container direction={"row"} alignItems={"center"}>
-            <h1 className="info-relevante">Información relevante</h1>
+            <h2 className="info-relevante">Información relevante</h2>
           </Container>
           <img src={cat} alt={"Información relevante"} />
         </Container>
@@ -83,6 +85,12 @@ export default function InformationDetail({ item }) {
         <Container>
             {item.programas !== "no" && (
               <Icon image={docs} text={"Programas"} link={item.programas} />
+            )}
+            {item.app_android !== "no" && (
+              <Icon image={android} text={"App Android"} link={item.app_android} />
+            )}
+            {item.app_ios !== "no" && (
+              <Icon image={apple} text={"App iOS"} link={item.app_ios} />
             )}
             {item.whatsapp !== "no" && (
               <Icon image={whatsapp} text={"whatsapp"} link={item.whatsapp} />

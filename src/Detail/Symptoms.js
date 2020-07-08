@@ -8,17 +8,17 @@ import sms from "../assets/sms.svg";
 import apple from "../assets/apple.svg";
 
 const DETAIL_DATA = {
-  app_android: {
+  "tiene-prueba-and": {
     icon: android,
-    text: "App-and",
+    text: "App Android",
   },
   sms: {
     icon: sms,
-    text: "Sms",
+    text: "SMS",
   },
-  app_ios: {
+  "tiene-prueba-ios": {
     icon: apple,
-    text: "App-ios",
+    text: "App iOS",
   },
   prueba_web: {
     icon: web,
@@ -35,7 +35,7 @@ export default function Symptoms({ item }) {
         <Container direction={"column"}>
           <h2 className="title">¿Tienes síntomas?</h2>
           <h4 className="subtitle">Haz la prueba en línea</h4>
-          {isEmptyDetails && <p>No hay información por el momento.</p>}
+          {isEmptyDetails && <p>Tu estado no tiene pruebas en línea, si tienes síntomas o quieres más información puedes llamar a las líneas locales de atención.</p>}
           {!isEmptyDetails && (
             <Container direction={"grid"}>
               {Object.keys(DETAIL_DATA).map(
