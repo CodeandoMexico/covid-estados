@@ -38,6 +38,7 @@ const Detail = () => {
         { text: "estable", value: "orange" },
         { text: "moderado", value: "yellow" },
         { text: "franco", value: "green" },
+        { text: "sin información", value: "gray" }
       ];
     }
     if (posibilities.length === 0) {
@@ -88,9 +89,15 @@ const Detail = () => {
                 />
               ))}
             </Container>
-            <Container alignItems={"center"} className="pd-1">
-              <button>Conoce más</button>
-            </Container>
+              <div className="button-box">
+                <a
+                  href="https://coronavirus.gob.mx/datos/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button>Conoce más</button>
+                </a>
+              </div>
           </Box>
           <Box direction={"column"}>
             <Container className="center">
@@ -111,7 +118,7 @@ const Detail = () => {
         </Container>
 
         <Container className="pd-1">
-          <Box direction={"column"} color={"primary"}>
+          <Box direction={"column"}>
             <h3>SEMÁFORO</h3>
             <div>
               Nivel de riesgo:

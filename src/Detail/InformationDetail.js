@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Box, Icon, LinkTo } from "../Components";
+import "./informationDetail.scss";
 
 import hospital from "../assets/hospital.svg";
 import docs from "../assets/docs.svg";
@@ -9,8 +10,8 @@ import telephone2 from "../assets/telephone2.svg";
 
 export default function InformationDetail({ item }) {
 
-  // TODO: Refactor logic in compoent 
-  // add reselect change structure 
+  // TODO: Refactor logic in compoent
+  // add reselect change structure
   let violencia_genero_en_linea = [];
   let violencia_genero_telefono = [];
   if (item) {
@@ -34,33 +35,43 @@ export default function InformationDetail({ item }) {
     <Container direction={"column"} className={"bgBlue"}>
       <Container className={"mobileColumn pd-1"}>
         <Container direction={"column"} alignItems={"center"}>
-          <h1>Información relevante</h1>
-          <img src={cat} alt={"Información relevante"} className="movileHide" />
+          <Container direction={"row"} alignItems={"center"}>
+            <h1 className="info-relevante">Información relevante</h1>
+          </Container>
+          <img src={cat} alt={"Información relevante"} />
         </Container>
+
         <Container direction={"column"}>
-          <Box direction={"column"}>
+          <Box direction={"column"} className="box-linea-violencia">
+
+            <h3 className="titulo-lineas-violencia">Líneas de atención a violencia de género</h3>
+
             <Container>
-              <h3>Líneas de atención a violencia de género</h3>
-            </Container>
-            <Container>
-              <Container direction={"column"}>
+              <Container direction={"column"} className="iallevamediosita">
                 {violencia_genero_telefono.length > 0 && (
                   <Container>
-                    Teléfonos:{" "}
+                  <div class="atenciones">
                     <div>
+                      <h5 class="atencion-text">Atención vía telefónica {" "}</h5>
+                    </div>
                       {violencia_genero_telefono.map((v, k) => (
                         <div key={k}>{v}</div>
                       ))}
                     </div>
                   </Container>
                 )}
+
                 {violencia_genero_en_linea.length > 0 && (
+
                   <Container>
-                    En línea:{" "}
-                    <div>
-                      {violencia_genero_en_linea.map((v, k) => (
-                        <LinkTo key={k} v={v} />
-                      ))}
+                    <div class="atenciones">
+                      <div>
+                        <h5 class="atencion-text">Atención en línea {" "}</h5>
+                      </div>
+                        {violencia_genero_en_linea.map((v, k) => (
+                          <LinkTo key={k} v={v} className="link-atenciones"/>
+                        ))}
+
                     </div>
                   </Container>
                 )}
@@ -68,7 +79,8 @@ export default function InformationDetail({ item }) {
               <img src={telephone2} alt="Teléfono" />
             </Container>
           </Box>
-          <Container>
+
+        <Container>
             {item.programas !== "no" && (
               <Icon image={docs} text={"Programas"} link={item.programas} />
             )}
@@ -88,15 +100,17 @@ export default function InformationDetail({ item }) {
 
       <Container alignItems={"center"} className="pd-1">
         <h4>Para más información: </h4>
-        <a
-          href={item.web}
-          className="button"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ padding: "1rem" }}
-        >
-          <button>SITIO WEB OFICIAL</button>
-        </a>
+        <div>
+          <a
+            href={item.web}
+            className="button"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ padding: "1rem" }}
+          >
+            <button>SITIO WEB OFICIAL</button>
+          </a>
+        </div>
       </Container>
     </Container>
   );

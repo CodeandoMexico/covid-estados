@@ -38,6 +38,11 @@ $margin-between-telephones: 10px;
   margin-bottom: $m-space;
 }
 
+.button-box {
+  text-align: center;
+  margin-top: 1rem;
+}
+
 .link-btn {
   background: map-get($m-colors, "primary");
   box-shadow: 0 5px 7px rgba(0,0,0,.3);
@@ -67,11 +72,19 @@ $margin-between-telephones: 10px;
 //     padding: 1rem 0 !important;
 //   }
 // }
+.info-relevante {
+  width: 60%;
+  text-align: left;
+}
+
 
 // responsive view
 @media only screen and (max-width: map-deep-get($m-queries, "laptop", "since")) {
   .hidden-mobile {
     display: none;
+  }
+  .info-relevante {
+    text-align: center;
   }
 }
 
