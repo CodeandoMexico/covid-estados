@@ -44,6 +44,7 @@ export default function Symptoms({ item }) {
                     <Icon
                       image={DETAIL_DATA[k].icon}
                       text={DETAIL_DATA[k].text}
+                      link={item[k]}
                     />
                   )
               )}
