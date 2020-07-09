@@ -29,7 +29,7 @@ function Home({ estados, load }) {
                 COVID Mx
               </h1>
               <p>
-                Una espacio con información oficial por estado para quien no
+                Un espacio con información oficial por estado para quien no
                 sabe qué hacer
               </p>
               <LinkSelect options={estados} placeholder="[SELECCIONA]" />
