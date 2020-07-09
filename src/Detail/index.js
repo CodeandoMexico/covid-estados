@@ -106,7 +106,9 @@ const Detail = () => {
             <Container className="phone-container">
               <ul className="decoration">
                 {phones.map((phone, index) => (
-                  <li key={index}>{phone}</li>
+                  <a href={`tel:${phone.replace(/\D/g,'')}`}>
+                    <li key={index}>{phone}</li>
+                  </a>
                 ))}
               </ul>
               <img
