@@ -5,7 +5,7 @@ const typeCases = [
   },
   {
     key: "confirmadostotales",
-    label: "Casos Activos",
+    label: "Casos Confirmados",
   },
   {
     key: "defunciones",
