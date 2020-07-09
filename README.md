@@ -7,6 +7,8 @@
 # COVID19
 Con el fin de la emergencia a nivel nacional, ahora es competencia de los 32 estados definir protocolos y medidas para hacer frente al COVID19. Este proyecto recopila, sistematiza y facilita el acceso a información oficial relevante, líneas de atención y medidas de restricción o protección implementadas por los gobiernos estatales.
 
+Este proyecto se realizó con información de sitios web, redes sociales y comunicados oficiales de los gobiernos estatales. Consumimos también los datos sobre casos del repositorio de [mexicovid19](https://github.com/mexicovid19/mexicovid19.github.io) para desplegar el número de casos por estado y los datos del semáforo de las conferencias de Gatell.
+
 ___
 
 ### Requerimientos
