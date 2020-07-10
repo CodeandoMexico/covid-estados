@@ -38,7 +38,7 @@ const Detail = () => {
         { text: "estable", value: "orange" },
         { text: "moderado", value: "yellow" },
         { text: "franco", value: "green" },
-        { text: "sin información", value: "gray" }
+        { text: "sin información", value: "gray" },
       ];
     }
     if (posibilities.length === 0) {
@@ -58,11 +58,10 @@ const Detail = () => {
   ) : (
     <>
       <Container>
-        <Container
-          direction={"column"}
-          className={"estado"}
-        >
-          <NavLink className="estado-codeando" to="/"><img src={logo} alt="codeando mexico" /></NavLink>
+        <Container direction={"column"} className={"estado"}>
+          <NavLink className="estado-codeando" to="/">
+            <img src={logo} alt="codeando mexico" />
+          </NavLink>
           <div className="flex">
             <h1 className="estado-title">{estado}</h1>
             <p>¿Te interesa información de otro estado?</p>
@@ -89,15 +88,15 @@ const Detail = () => {
                 />
               ))}
             </Container>
-              <div className="button-box">
-                <a
-                  href="https://coronavirus.gob.mx/datos/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button>Conoce más</button>
-                </a>
-              </div>
+            <div className="button-box">
+              <a
+                href="https://coronavirus.gob.mx/datos/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button>Conoce más</button>
+              </a>
+            </div>
           </Box>
           <Box direction={"column"}>
             <Container className="center">
@@ -106,15 +105,12 @@ const Detail = () => {
             <Container className="phone-container">
               <ul className="decoration">
                 {phones.map((phone, index) => (
-                  <a href={`tel:${phone.replace(/\D/g,'')}`}>
+                  <a href={`tel:${phone.replace(/\D/g, "")}`}>
                     <li key={index}>{phone}</li>
                   </a>
                 ))}
               </ul>
-              <img
-                src={telephone}
-                alt="Quédate en casa"
-              />
+              <img src={telephone} alt="Quédate en casa" />
             </Container>
           </Box>
         </Container>
@@ -148,10 +144,18 @@ const Detail = () => {
       <InformationDetail item={estadoDetail} />
       <div className={"content text-center color-primary"}>
         <p>
-          *Este es un esfuerzo voluntario, si encuentras información incorrecta o quieres agregar algo, llena este <a href="https://docs.google.com/forms/d/1HhbbSjhkRB9rYA32lnm0b6e5mUQpDk8Eq_Yrl7-MUjI/viewform?edit_requested=true" target="_blank" rel="noopener noreferrer">formulario</a>
+          *Este es un esfuerzo voluntario, si encuentras información incorrecta
+          o quieres agregar algo, llena este{" "}
+          <a
+            href="https://docs.google.com/forms/d/1HhbbSjhkRB9rYA32lnm0b6e5mUQpDk8Eq_Yrl7-MUjI/viewform?edit_requested=true"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            formulario
+          </a>
         </p>
         <a
-          href="https://airtable.com/shrmp4rtdUkGu8BAn"
+          href="https://airtable-csv-exports-production.s3.amazonaws.com/0c1d5c63f6f670f9/covidmx-Grid%20view.csv?AWSAccessKeyId=AKIAR7KB7OYSMPA2CKCB&Expires=1594353144&Signature=H0GJrk%2FFZK4TXS0N87o0b5qsTqc%3D"
           target="_blank"
           rel="noopener noreferrer"
         >
