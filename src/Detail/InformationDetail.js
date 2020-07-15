@@ -57,8 +57,8 @@ export default function InformationDetail({ item }) {
                       <h5 className="atencion-text">Atención vía telefónica {" "}</h5>
                     </div>
                       {violencia_genero_telefono.map((v, k) => (
-                        <a href={`tel:${v.replace(/\D/g,'')}`}>
-                          <div key={k}>{v}</div>
+                        <a key={k} href={`tel:${v.replace(/\D/g,'')}`}>
+                          <div>{v}</div>
                         </a>
                       ))}
                     </div>
