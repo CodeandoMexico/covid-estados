@@ -84,12 +84,16 @@ export default function InformationDetail({ item }) {
             </Container>
           </Box>
 
-        <Container>
+          <Container>
             {item.programas !== "no" && (
               <Icon image={docs} text={"Programas"} link={item.programas} />
             )}
             {item.app_android !== "no" && (
-              <Icon image={android} text={"App Android"} link={item.app_android} />
+              <Icon
+                image={android}
+                text={"App Android"}
+                link={item.app_android}
+              />
             )}
             {item.app_ios !== "no" && (
               <Icon image={apple} text={"App iOS"} link={item.app_ios} />
