@@ -41,7 +41,7 @@ export default function Symptoms({ item }) {
               {Object.keys(DETAIL_DATA).map(
                 (k) =>
                   item[k] !== "no" && (
-                    <div>
+                    <div key={k}>
                       <Icon
                         image={DETAIL_DATA[k].icon}
                         text={DETAIL_DATA[k].text}

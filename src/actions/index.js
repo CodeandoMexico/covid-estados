@@ -1,27 +1,16 @@
 import axios from "axios";
-import { csvToJson } from "../utils";
+import { csvToJson, urlify } from "../utils";
 import { LOAD, SUCCESS, ERROR } from "../reducers/Estados";
 
-// Auxiliar function for routes
-function urlify(str) {
-  var map = {
-      '-' : ' ',
-      'a' : 'á|à|ã|â|À|Á|Ã|Â',
-      'e' : 'é|è|ê|É|È|Ê',
-      'i' : 'í|ì|î|Í|Ì|Î',
-      'o' : 'ó|ò|ô|õ|Ó|Ò|Ô|Õ',
-      'u' : 'ú|ù|û|ü|Ú|Ù|Û|Ü',
-      'c' : 'ç|Ç',
-      'n' : 'ñ|Ñ'
-  };
+const API_URLS = {
+  lastUdated:
+    "https://raw.githubusercontent.com/mexicovid19/Mexico-datos/master/datos/last_updated.csv",
 
-  str = str.toLowerCase();
+  airTable:
+    "https://api.airtable.com/v0/appelr2zBXKCJPWJS/covidmx?api_key=keymOwmuSwgNcTH7p&sort%5B0%5D%5Bfield%5D=estado",
 
-  for (var pattern in map) {
-    str = str.replace(new RegExp(map[pattern], 'g'), pattern);
-  };
-
-  return str;
+  dataCovid:
+    "https://raw.githubusercontent.com/mexicovid19/Mexico-datos/master/datos/estados_hoy.csv",
 };
 
 //Actions
@@ -30,16 +19,16 @@ export const getEstados = () => async (dispatch, getState) => {
     type: LOAD,
   });
   try {
+    const lastUdatedData = await axios.get(API_URLS.lastUdated);
+
     const {
       data: { records: estados },
-    } = await axios.get(
-      "https://api.airtable.com/v0/appelr2zBXKCJPWJS/covidmx?api_key=keymOwmuSwgNcTH7p&sort%5B0%5D%5Bfield%5D=estado"
-    );
+    } = await axios.get(API_URLS.airTable);
+
     const responseDetil = await axios
-      .get(
-        "https://raw.githubusercontent.com/mexicovid19/Mexico-datos/master/datos/estados_hoy.csv"
-      )
+      .get(API_URLS.dataCovid)
       .then((response) => csvToJson(response.data));
+
     const lisEstados = estados.map((s) => {
       return {
         option: s.fields.estado,
@@ -48,11 +37,13 @@ export const getEstados = () => async (dispatch, getState) => {
         ...s.fields,
       };
     });
+
     dispatch({
       type: SUCCESS,
       payload: {
         data: lisEstados,
         details: responseDetil,
+        lastUdatedData: csvToJson(lastUdatedData.data)[0].updated_at,
       },
     });
   } catch (error) {
