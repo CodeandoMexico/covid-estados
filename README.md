@@ -2,6 +2,7 @@
 <img src="http://codeandomexico.org/resources/img/codeandomexico.png" width="500" alt="Codeando México"><br>
 <a href="http://www.codeandomexico.org/" target="_blank"><img src="https://img.shields.io/badge/website-CodeandoMexico-00D88E.svg"></a>
 <a href="http://slack.codeandomexico.org/" target="_blank"><img src="https://img.shields.io/badge/slack-CodeandoMexico-EC0E4F.svg"></a>
+<a href="https://github.com/CodeandoMexico/covid-estados/actions?query=workflow%3A%22Node.js+CI%22" target="_blank"><img src="https://github.com/CodeandoMexico/covid-estados/workflows/Node.js%20CI/badge.svg"></a>
 </p>
 
 # COVID19
