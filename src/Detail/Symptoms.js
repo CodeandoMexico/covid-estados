@@ -41,11 +41,14 @@ export default function Symptoms({ item }) {
               {Object.keys(DETAIL_DATA).map(
                 (k) =>
                   item[k] !== "no" && (
-                    <Icon
-                      image={DETAIL_DATA[k].icon}
-                      text={DETAIL_DATA[k].text}
-                      link={item[k]}
-                    />
+                    <div>
+                      <Icon
+                        image={DETAIL_DATA[k].icon}
+                        text={DETAIL_DATA[k].text}
+                        link={DETAIL_DATA[k].text !== "SMS" && item[k]}
+                      />
+                      {DETAIL_DATA[k].text === "SMS" && item[k]}
+                    </div>
                   )
               )}
             </Container>
