@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { getEstate } from "../Selectors";
+import moment from 'moment'
+import 'moment/locale/es';
 import Err404 from "../Err404";
 import { Container, Counter, Box, LinkSelect, Badge } from "../Components";
 import Loader from "../Loader";
@@ -14,10 +16,12 @@ import logo from "../assets/codeandomexico-bco.svg";
 import config from "./config";
 import "./index.scss";
 
+
 const Detail = () => {
   const { id } = useParams();
   const { data: estados, load } = useSelector((state) => state.estados);
   const estadoDetail = useSelector((state) => getEstate(state, id));
+  const { lastUdatedData: updateAt } = useSelector((state) => state.estados);
   const isItem = Object.keys(estadoDetail).length > 0;
   const { estado, telefono } = estadoDetail || {};
   const phones = telefono ? telefono.split(",") : [];
@@ -97,6 +101,7 @@ const Detail = () => {
                 <button>Conoce más</button>
               </a>
             </div>
+            <p className="update-at">Actualizado: {moment(updateAt).format('LL')}</p>
           </Box>
           <Box direction={"column"}>
             <Container className="center">
