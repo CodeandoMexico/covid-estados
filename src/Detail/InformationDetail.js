@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Container, Box, Icon, LinkTo } from "../Components";
 import "./informationDetail.scss";
 
@@ -9,13 +9,17 @@ import android from "../assets/android.svg";
 import apple from "../assets/apple.svg";
 import cat from "../assets/cat.svg";
 import telephone2 from "../assets/telephone2.svg";
+import web from "../assets/web.svg";
 
 export default function InformationDetail({ item }) {
-
+  
   // TODO: Refactor logic in compoent
   // add reselect change structure
   let violencia_genero_en_linea = [];
   let violencia_genero_telefono = [];
+  let info_relevante_otros = [];
+  let infoOtrosIsLink = null;
+
   if (item) {
     if (
       item.violencia_genero_en_linea &&
@@ -32,7 +36,32 @@ export default function InformationDetail({ item }) {
       violencia_genero_telefono = item.violencia_genero_telefono.split(",");
     }
 
+    if (item.otros !== "no") {
+      info_relevante_otros = item.otros.split(",").map((v) => v.split(": "));
+      if (info_relevante_otros.length > 0) {
+        info_relevante_otros[0][1].substring(0, 5) === "https"
+          ? (infoOtrosIsLink = true)
+          : (infoOtrosIsLink = false);
+      }
+    }
   }
+
+  const generateLinkToTel = (tel) => {
+    return `tel:${tel.replace(/\D/g,'')}`
+  } 
+
+  const infoHasWhatsapp = (title) => title.toUpperCase().includes("WHATSAPP");
+
+  const infoDeTarjetas = () => {
+    return (
+      item.programas !== "no" ||
+      item.app_android !== "no" ||
+      item.app_ios !== "no" ||
+      item.whatsapp !== "no" ||
+      item.centros_salud !== "no"
+    );
+  };
+
   return (
     <Container direction={"column"} className={"bgBlue"}>
       <Container className={"mobileColumn pd-1"}>
@@ -57,7 +86,7 @@ export default function InformationDetail({ item }) {
                       <h5 className="atencion-text">Atención vía telefónica {" "}</h5>
                     </div>
                       {violencia_genero_telefono.map((v, k) => (
-                        <a href={`tel:${v.replace(/\D/g,'')}`}>
+                        <a href={generateLinkToTel(v)}>
                           <div key={k}>{v}</div>
                         </a>
                       ))}
@@ -75,7 +104,6 @@ export default function InformationDetail({ item }) {
                         {violencia_genero_en_linea.map((v, k) => (
                           <LinkTo key={k} v={v} className="link-atenciones"/>
                         ))}
-
                     </div>
                   </Container>
                 )}
@@ -84,6 +112,7 @@ export default function InformationDetail({ item }) {
             </Container>
           </Box>
 
+          {infoDeTarjetas() && (
           <Container>
             {item.programas !== "no" && (
               <Icon image={docs} text={"Programas"} link={item.programas} />
@@ -108,6 +137,59 @@ export default function InformationDetail({ item }) {
                 link={item.centros_salud}
               />
             )}
+          </Container>
+          )}
+
+          <Container>
+            {info_relevante_otros.length > 0 &&
+              info_relevante_otros.map((info) => (
+                <Fragment>
+                  {infoOtrosIsLink && !infoHasWhatsapp(info[0]) && (
+                    <Box direction={"column"} className='box-linea-violencia'>
+                      <Container>
+                        <Container
+                          direction={"column"}
+                          className='iallevamediosita'
+                        >
+                          <Container>
+                            <div className='atenciones'>
+                              <div>
+                                <h5 className='atencion-text'>{info[0]}</h5>
+                              </div>
+                              <a
+                                href={info[1]}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='link-atenciones'
+                              >
+                                {info[1]}
+                              </a>
+                            </div>
+                          </Container>
+                        </Container>
+                        <img src={web} alt='Web' />
+                      </Container>
+                    </Box>
+                  )}
+                  {infoOtrosIsLink && infoHasWhatsapp(info[0]) && (
+                    <Icon image={whatsapp} text={info[0]} link={info[1]} />
+                  )} 
+                  {!infoOtrosIsLink && !infoHasWhatsapp(info[0]) && (
+                    <Icon
+                      image={telephone2}
+                      text={info[0]}
+                      link={generateLinkToTel(info[1])}
+                    />
+                  )}
+                  {!infoOtrosIsLink && infoHasWhatsapp(info[0]) && (
+                    <Icon
+                      image={whatsapp}
+                      text={info[0]}
+                      link={`https://api.whatsapp.com/send?phone=${info[1]}`}
+                    />
+                  )}
+                </Fragment>
+              ))}
           </Container>
         </Container>
       </Container>
