@@ -52,9 +52,9 @@ export default function InformationDetail({ item }) {
               <Container direction={"column"} className="iallevamediosita">
                 {violencia_genero_telefono.length > 0 && (
                   <Container>
-                  <div class="atenciones">
+                  <div className="atenciones">
                     <div>
-                      <h5 class="atencion-text">Atención vía telefónica {" "}</h5>
+                      <h5 className="atencion-text">Atención vía telefónica {" "}</h5>
                     </div>
                       {violencia_genero_telefono.map((v, k) => (
                         <a href={`tel:${v.replace(/\D/g,'')}`}>
@@ -68,9 +68,9 @@ export default function InformationDetail({ item }) {
                 {violencia_genero_en_linea.length > 0 && (
 
                   <Container>
-                    <div class="atenciones">
+                    <div className="atenciones">
                       <div>
-                        <h5 class="atencion-text">Atención en línea {" "}</h5>
+                        <h5 className="atencion-text">Atención en línea {" "}</h5>
                       </div>
                         {violencia_genero_en_linea.map((v, k) => (
                           <LinkTo key={k} v={v} className="link-atenciones"/>
@@ -84,12 +84,16 @@ export default function InformationDetail({ item }) {
             </Container>
           </Box>
 
-        <Container>
+          <Container>
             {item.programas !== "no" && (
               <Icon image={docs} text={"Programas"} link={item.programas} />
             )}
             {item.app_android !== "no" && (
-              <Icon image={android} text={"App Android"} link={item.app_android} />
+              <Icon
+                image={android}
+                text={"App Android"}
+                link={item.app_android}
+              />
             )}
             {item.app_ios !== "no" && (
               <Icon image={apple} text={"App iOS"} link={item.app_ios} />
