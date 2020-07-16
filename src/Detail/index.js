@@ -3,9 +3,11 @@ import { Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 import { getEstate } from "../Selectors";
-import moment from 'moment'
-import 'moment/locale/es';
+import moment from "moment";
+import "moment/locale/es";
+import { API_URLS } from "../utils";
 import Err404 from "../Err404";
 import { Container, Counter, Box, LinkSelect, Badge } from "../Components";
 import Loader from "../Loader";
@@ -16,7 +18,6 @@ import logo from "../assets/codeandomexico-bco.svg";
 import config from "./config";
 import "./index.scss";
 
-
 const Detail = () => {
   const { id } = useParams();
   const { data: estados, load } = useSelector((state) => state.estados);
@@ -25,6 +26,17 @@ const Detail = () => {
   const isItem = Object.keys(estadoDetail).length > 0;
   const { estado, telefono } = estadoDetail || {};
   const phones = telefono ? telefono.split(",") : [];
+
+  const downloadCsv = async () => {
+    const { data } = await axios.get(API_URLS.dataCovid);
+    const blob = new Blob([data], { type: "text/csv" });
+    let link = window.document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+    link.download = link.href.split("/").pop() + ".csv";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   // TODO: Move in function abstract
   const getVariant = (value, type) => {
@@ -101,7 +113,9 @@ const Detail = () => {
                 <button>Conoce más</button>
               </a>
             </div>
-            <p className="update-at">Actualizado: {moment(updateAt).format('LL')}</p>
+            <p className="update-at">
+              Actualizado: {moment(updateAt).format("LL")}
+            </p>
           </Box>
           <Box direction={"column"}>
             <Container className="center">
@@ -110,8 +124,8 @@ const Detail = () => {
             <Container className="phone-container">
               <ul className="decoration">
                 {phones.map((phone, index) => (
-                  <a href={`tel:${phone.replace(/\D/g, "")}`}>
-                    <li key={index}>{phone}</li>
+                  <a key={index} href={`tel:${phone.replace(/\D/g, "")}`}>
+                    <li>{phone}</li>
                   </a>
                 ))}
               </ul>
@@ -159,13 +173,13 @@ const Detail = () => {
             formulario
           </a>
         </p>
-        <a
-          href="https://airtable-csv-exports-production.s3.amazonaws.com/0c1d5c63f6f670f9/covidmx-Grid%20view.csv?AWSAccessKeyId=AKIAR7KB7OYSMPA2CKCB&Expires=1594353144&Signature=H0GJrk%2FFZK4TXS0N87o0b5qsTqc%3D"
+        <div
+          onClick={() => downloadCsv()}
           target="_blank"
           rel="noopener noreferrer"
         >
           <button>DESCARGAR DATOS</button>
-        </a>
+        </div>
       </div>
     </>
   );

@@ -21,9 +21,8 @@ class App extends React.Component {
   }
 
   render() {
-    const customHistory = createBrowserHistory();
     return (
-      <BrowserRouter history={customHistory}>
+      <BrowserRouter >
         {GA.init() && <GA.RouteTracker />}
         <NavMain />
         <Switch>

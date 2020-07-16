@@ -1,17 +1,6 @@
 import axios from "axios";
-import { csvToJson, urlify } from "../utils";
+import { csvToJson, urlify, API_URLS } from "../utils";
 import { LOAD, SUCCESS, ERROR } from "../reducers/Estados";
-
-const API_URLS = {
-  lastUdated:
-    "https://raw.githubusercontent.com/mexicovid19/Mexico-datos/master/datos/last_updated.csv",
-
-  airTable:
-    "https://api.airtable.com/v0/appelr2zBXKCJPWJS/covidmx?api_key=keymOwmuSwgNcTH7p&sort%5B0%5D%5Bfield%5D=estado",
-
-  dataCovid:
-    "https://raw.githubusercontent.com/mexicovid19/Mexico-datos/master/datos/estados_hoy.csv",
-};
 
 //Actions
 export const getEstados = () => async (dispatch, getState) => {

@@ -86,7 +86,7 @@ export default function InformationDetail({ item }) {
                       <h5 className="atencion-text">Atención vía telefónica {" "}</h5>
                     </div>
                       {violencia_genero_telefono.map((v, k) => (
-                        <a href={generateLinkToTel(v)}>
+                        <a href={generateLinkToTel(v)} key={k}>
                           <div key={k}>{v}</div>
                         </a>
                       ))}
@@ -142,8 +142,8 @@ export default function InformationDetail({ item }) {
 
           <Container>
             {info_relevante_otros.length > 0 &&
-              info_relevante_otros.map((info) => (
-                <Fragment>
+              info_relevante_otros.map((info, k) => (
+                <Fragment key={k}>
                   {infoOtrosIsLink && !infoHasWhatsapp(info[0]) && (
                     <Box direction={"column"} className='box-linea-violencia'>
                       <Container>
