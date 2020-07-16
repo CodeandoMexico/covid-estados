@@ -173,13 +173,13 @@ const Detail = () => {
             formulario
           </a>
         </p>
-        <div
-          onClick={() => downloadCsv()}
+        <a
+          href="https://airtable.com/shrmp4rtdUkGu8BAn"
           target="_blank"
           rel="noopener noreferrer"
         >
           <button>DESCARGAR DATOS</button>
-        </div>
+        </a>
       </div>
     </>
   );
