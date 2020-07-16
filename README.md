@@ -37,6 +37,7 @@ ___
 * [RodolfoFerro](https://github.com/RodolfoFerro)
 * [josellausas](https://github.com/josellausas)
 * [Yarov](https://github.com/Yarov)
+* [bifr0ns](https://github.com/bifr0ns)
 
 `{}` con ❤️ por la comunidad de [Codeando México](http://www.codeandomexico.org).
 
