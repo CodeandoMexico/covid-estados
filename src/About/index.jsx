@@ -31,14 +31,14 @@ function About() {
         </div>
         <div className="row">
           <div className="col">
-            <img src={methodology} alt="Metodologia" />
+            <img src={methodology} alt="Replica" />
           </div>
           <div className="col col-text">
-            <h4>Metodología</h4>
+            <h4>¿Quieres replicar este proyecto?</h4>
             <p>
-              ¿Quieres replicar este proyecto en tu país? Descarga nuestra
-              metodología. Si necesitas asistencia técnica, puedes escribirnos a
-              equipo@codeandomexico.org
+              Si quieres conocer más de este proyecto o replicarlo en tu país, 
+              puedes escribirnos a 
+              <a href="mailto:equipo@codeandomexico.org">equipo@codeandomexico.org</a>
             </p>
           </div>
         </div>
