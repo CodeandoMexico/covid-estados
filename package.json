@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "homepage": "https://directoriocovidmx.org/",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "history": "^5.0.0",
     "mol-normalize": "^1.0.2",
@@ -16,7 +16,7 @@
     "react-loadingg": "^1.7.2",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^4.0.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
