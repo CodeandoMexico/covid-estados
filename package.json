@@ -5,7 +5,7 @@
   "homepage": "https://directoriocovidmx.org/",
   "dependencies": {
     "axios": "^0.21.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "history": "^5.0.0",
     "mol-normalize": "^1.0.2",
     "moment": "^2.27.0",
